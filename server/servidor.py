@@ -43,7 +43,8 @@ class Server:
   @cherrypy.expose 
   def index(self):
     dir = os.listdir(os.getcwd() + '/static')
-    remote = cherrypy.request.headerMap.get("Remote-Addr", "") 
+    #remote = cherrypy.request.headerMap.get("Remote-Addr", "") 
+    tmpl = env.get_template("index.html")
     return tmpl.render(directories=dir)  
   
   #la accion que enviamos al ordenador que controla la pantalla 

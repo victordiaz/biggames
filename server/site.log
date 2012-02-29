@@ -433,3 +433,283 @@ AttributeError: 'Request' object has no attribute 'headerMap'
     return getattr(child, name)
 AttributeError: 'Request' object has no attribute 'headerMap'
 
+[29/Feb/2012:14:23:25] ENGINE Keyboard Interrupt: shutting down bus
+[29/Feb/2012:14:23:25] ENGINE Bus STOPPING
+[29/Feb/2012:14:23:25] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8081)) shut down
+[29/Feb/2012:14:23:25] ENGINE Stopped thread '_TimeoutMonitor'.
+[29/Feb/2012:14:23:25] ENGINE Bus STOPPED
+[29/Feb/2012:14:23:25] ENGINE Bus EXITING
+[29/Feb/2012:14:23:25] ENGINE Bus EXITED
+[29/Feb/2012:14:23:25] ENGINE Waiting for child threads to terminate...
+[29/Feb/2012:14:23:35] ENGINE Listening for SIGHUP.
+[29/Feb/2012:14:23:35] ENGINE Listening for SIGTERM.
+[29/Feb/2012:14:23:35] ENGINE Listening for SIGUSR1.
+[29/Feb/2012:14:23:35] ENGINE Bus STARTING
+[29/Feb/2012:14:23:35] ENGINE Started monitor thread '_TimeoutMonitor'.
+[29/Feb/2012:14:23:35] ENGINE Serving on 0.0.0.0:8081
+[29/Feb/2012:14:23:35] ENGINE Bus STARTED
+[29/Feb/2012:14:23:47] HTTP Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/lib/encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "servidor.py", line 46, in index
+    remote = cherrypy.request.headerMap.get("Remote-Addr", "")
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/__init__.py", line 208, in __getattr__
+    return getattr(child, name)
+AttributeError: 'Request' object has no attribute 'headerMap'
+
+[29/Feb/2012:14:24:07] ENGINE Keyboard Interrupt: shutting down bus
+[29/Feb/2012:14:24:07] ENGINE Bus STOPPING
+[29/Feb/2012:14:24:07] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8081)) shut down
+[29/Feb/2012:14:24:07] ENGINE Stopped thread '_TimeoutMonitor'.
+[29/Feb/2012:14:24:07] ENGINE Bus STOPPED
+[29/Feb/2012:14:24:07] ENGINE Bus EXITING
+[29/Feb/2012:14:24:07] ENGINE Bus EXITED
+[29/Feb/2012:14:24:07] ENGINE Waiting for child threads to terminate...
+[29/Feb/2012:14:24:08] ENGINE Listening for SIGHUP.
+[29/Feb/2012:14:24:08] ENGINE Listening for SIGTERM.
+[29/Feb/2012:14:24:08] ENGINE Listening for SIGUSR1.
+[29/Feb/2012:14:24:08] ENGINE Bus STARTING
+[29/Feb/2012:14:24:08] ENGINE Started monitor thread '_TimeoutMonitor'.
+[29/Feb/2012:14:24:08] ENGINE Serving on 0.0.0.0:8081
+[29/Feb/2012:14:24:08] ENGINE Bus STARTED
+[29/Feb/2012:14:24:10] HTTP Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/lib/encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "servidor.py", line 46, in index
+    remote = cherrypy.request.headerMap.get("Remote-Addr", "")
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/__init__.py", line 208, in __getattr__
+    return getattr(child, name)
+AttributeError: 'Request' object has no attribute 'headerMap'
+
+[29/Feb/2012:14:24:12] HTTP Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/lib/encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "servidor.py", line 46, in index
+    remote = cherrypy.request.headerMap.get("Remote-Addr", "")
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/__init__.py", line 208, in __getattr__
+    return getattr(child, name)
+AttributeError: 'Request' object has no attribute 'headerMap'
+
+[29/Feb/2012:14:24:19] HTTP Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/lib/encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "servidor.py", line 46, in index
+    remote = cherrypy.request.headerMap.get("Remote-Addr", "")
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/__init__.py", line 208, in __getattr__
+    return getattr(child, name)
+AttributeError: 'Request' object has no attribute 'headerMap'
+
+[29/Feb/2012:14:26:04] HTTP Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/lib/encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "servidor.py", line 46, in index
+    remote = cherrypy.request.headerMap.get("Remote-Addr", "")
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/__init__.py", line 208, in __getattr__
+    return getattr(child, name)
+AttributeError: 'Request' object has no attribute 'headerMap'
+
+[29/Feb/2012:14:26:09] HTTP Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/lib/encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "servidor.py", line 46, in index
+    remote = cherrypy.request.headerMap.get("Remote-Addr", "")
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/__init__.py", line 208, in __getattr__
+    return getattr(child, name)
+AttributeError: 'Request' object has no attribute 'headerMap'
+
+[29/Feb/2012:14:26:11] HTTP Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/lib/encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "servidor.py", line 46, in index
+    remote = cherrypy.request.headerMap.get("Remote-Addr", "")
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/__init__.py", line 208, in __getattr__
+    return getattr(child, name)
+AttributeError: 'Request' object has no attribute 'headerMap'
+
+[29/Feb/2012:14:27:10] HTTP Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/lib/encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "servidor.py", line 46, in index
+    #remote = cherrypy.request.headerMap.get("Remote-Addr", "")
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/__init__.py", line 208, in __getattr__
+    return getattr(child, name)
+AttributeError: 'Request' object has no attribute 'headerMap'
+
+[29/Feb/2012:14:27:12] HTTP Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/lib/encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "servidor.py", line 46, in index
+    #remote = cherrypy.request.headerMap.get("Remote-Addr", "")
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/__init__.py", line 208, in __getattr__
+    return getattr(child, name)
+AttributeError: 'Request' object has no attribute 'headerMap'
+
+[29/Feb/2012:14:27:17] ENGINE Keyboard Interrupt: shutting down bus
+[29/Feb/2012:14:27:17] ENGINE Bus STOPPING
+[29/Feb/2012:14:27:22] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8081)) shut down
+[29/Feb/2012:14:27:22] ENGINE Stopped thread '_TimeoutMonitor'.
+[29/Feb/2012:14:27:22] ENGINE Bus STOPPED
+[29/Feb/2012:14:27:22] ENGINE Bus EXITING
+[29/Feb/2012:14:27:22] ENGINE Bus EXITED
+[29/Feb/2012:14:27:22] ENGINE Waiting for child threads to terminate...
+[29/Feb/2012:14:27:23] ENGINE Listening for SIGHUP.
+[29/Feb/2012:14:27:23] ENGINE Listening for SIGTERM.
+[29/Feb/2012:14:27:23] ENGINE Listening for SIGUSR1.
+[29/Feb/2012:14:27:23] ENGINE Bus STARTING
+[29/Feb/2012:14:27:23] ENGINE Started monitor thread '_TimeoutMonitor'.
+[29/Feb/2012:14:27:23] ENGINE Serving on 0.0.0.0:8081
+[29/Feb/2012:14:27:23] ENGINE Bus STARTED
+[29/Feb/2012:14:27:25] HTTP Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/lib/encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "servidor.py", line 47, in index
+    return tmpl.render(directories=dir)
+NameError: global name 'tmpl' is not defined
+
+[29/Feb/2012:14:27:27] HTTP Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/lib/encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "servidor.py", line 47, in index
+    return tmpl.render(directories=dir)
+NameError: global name 'tmpl' is not defined
+
+[29/Feb/2012:14:29:15] HTTP Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/lib/encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "servidor.py", line 47, in index
+    tmpl = lookup.get_template("index.html")
+NameError: global name 'tmpl' is not defined
+
+[29/Feb/2012:14:29:16] HTTP Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/lib/encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "servidor.py", line 47, in index
+    tmpl = lookup.get_template("index.html")
+NameError: global name 'tmpl' is not defined
+
+[29/Feb/2012:14:29:18] HTTP Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/lib/encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "servidor.py", line 47, in index
+    tmpl = lookup.get_template("index.html")
+NameError: global name 'tmpl' is not defined
+
+[29/Feb/2012:14:29:20] ENGINE Keyboard Interrupt: shutting down bus
+[29/Feb/2012:14:29:20] ENGINE Bus STOPPING
+[29/Feb/2012:14:29:25] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8081)) shut down
+[29/Feb/2012:14:29:25] ENGINE Stopped thread '_TimeoutMonitor'.
+[29/Feb/2012:14:29:25] ENGINE Bus STOPPED
+[29/Feb/2012:14:29:25] ENGINE Bus EXITING
+[29/Feb/2012:14:29:25] ENGINE Bus EXITED
+[29/Feb/2012:14:29:25] ENGINE Waiting for child threads to terminate...
+[29/Feb/2012:14:29:27] ENGINE Listening for SIGHUP.
+[29/Feb/2012:14:29:27] ENGINE Listening for SIGTERM.
+[29/Feb/2012:14:29:27] ENGINE Listening for SIGUSR1.
+[29/Feb/2012:14:29:27] ENGINE Bus STARTING
+[29/Feb/2012:14:29:27] ENGINE Started monitor thread '_TimeoutMonitor'.
+[29/Feb/2012:14:29:27] ENGINE Serving on 0.0.0.0:8081
+[29/Feb/2012:14:29:27] ENGINE Bus STARTED
+[29/Feb/2012:14:29:30] HTTP Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/lib/encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "servidor.py", line 47, in index
+    tmpl = lookup.get_template("index.html")
+NameError: global name 'lookup' is not defined
+
+[29/Feb/2012:14:29:31] HTTP Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/lib/encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "servidor.py", line 47, in index
+    tmpl = lookup.get_template("index.html")
+NameError: global name 'lookup' is not defined
+
+[29/Feb/2012:14:30:07] HTTP Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/lib/encoding.py", line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/CherryPy-3.2.2-py2.7.egg/cherrypy/_cpdispatch.py", line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "servidor.py", line 47, in index
+    tmpl = env.get_template("index.html")
+NameError: global name 'lookup' is not defined
+
+[29/Feb/2012:14:30:08] ENGINE Keyboard Interrupt: shutting down bus
+[29/Feb/2012:14:30:08] ENGINE Bus STOPPING
+[29/Feb/2012:14:30:13] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8081)) shut down
+[29/Feb/2012:14:30:13] ENGINE Stopped thread '_TimeoutMonitor'.
+[29/Feb/2012:14:30:13] ENGINE Bus STOPPED
+[29/Feb/2012:14:30:13] ENGINE Bus EXITING
+[29/Feb/2012:14:30:13] ENGINE Bus EXITED
+[29/Feb/2012:14:30:13] ENGINE Waiting for child threads to terminate...
+[29/Feb/2012:14:30:15] ENGINE Listening for SIGHUP.
+[29/Feb/2012:14:30:15] ENGINE Listening for SIGTERM.
+[29/Feb/2012:14:30:15] ENGINE Listening for SIGUSR1.
+[29/Feb/2012:14:30:15] ENGINE Bus STARTING
+[29/Feb/2012:14:30:15] ENGINE Started monitor thread '_TimeoutMonitor'.
+[29/Feb/2012:14:30:15] ENGINE Serving on 0.0.0.0:8081
+[29/Feb/2012:14:30:15] ENGINE Bus STARTED
