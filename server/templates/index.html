@@ -1,0 +1,32 @@
+<html>
+
+<head>
+	<link rel="stylesheet" href="./static/qq.css" type="text/css" media="screen" charset="utf-8"> 
+    
+</head>
+
+<body>
+<h1>
+ BigGames 
+</h1> 
+
+<h2>
+Utilidades para el taller 
+</h2>
+<p>
+<ul id="navigation">
+	
+{% for dir in directories %}
+  <li><a href="./static/{{ dir }}/index.html">{{ dir }}</a></li>
+{% endfor %} 
+  <li><a href="./static/presentation/control.html">Control</a></li>
+
+</ul>
+</p>
+
+<footer>
+<a href = "http://www.uncoded.es"> realizado por Uncoded.es </a>
+</footer>
+
+</body>
+</html>

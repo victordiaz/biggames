@@ -1,0 +1,90 @@
+<html> 
+	<head> 
+	<meta http-equiv="Content-Type" context="text/html; charset=UTF-8">	
+<!-- 	<link href="js/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css"/> 		 -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+
+	<style  type="text/css">
+	@font-face { font-family: visitor1; src: url('img/visitor1.ttf'); } 
+	@font-face { font-family: visitor2; src: url('img/visitor2.ttf'); } 
+	body{
+		font-family: visitor1;
+		font-size: 10px;
+		color: #444;
+	}
+	#screen{
+		background-color: #999;
+		position: fixed;
+		overflow: hidden;
+		top:    40px;
+		left:   40px;
+		height: 156px;
+		width:  192px;
+		cursor: crosshair;
+	}
+	.commonElement{
+		position: fixed;
+		overflow: hidden;
+		background-color: black;
+	}
+	#topbar{
+		top:40px;
+		left:112px;
+		height: 16px;
+		width: 48px;		
+	}
+	#middlebar{
+		top:56px;
+		left: 76px;
+		height: 16px;
+		width: 120px;
+	}
+	
+ 	#contentbar{
+		top:    72px;
+		left:   40px;
+		height: 125px;
+		width:  192px;
+	}
+
+	</style>
+	
+	
+	
+	
+	<script type="text/javascript">
+		jQuery(document).ready(
+		function(){
+			   $('#screen').mousemove(function(e){
+		      $('#status').html( e.pageX +', '+ e.pageY);
+		   });
+		   }
+		
+		)
+		
+		
+	</script>
+
+    </head>
+    
+<html>
+<div id="screen">
+<div id="topbar" class="commonElement">
+titiri
+</div>
+<div id="middlebar" class="commonElement">
+
+</div>
+<div id="contentbar" class="commonElement">
+
+</div>
+
+</div>
+
+<h2 id="status">
+	0, 0
+</h2>
+
+
+</html>    

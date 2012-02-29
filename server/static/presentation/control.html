@@ -1,0 +1,31 @@
+<html> 
+<head> 
+	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+	<meta name="viewport"    content="user-scalable=no, width=device-width" />
+        <link rel='stylesheet'  href='http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css' /> 
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.5.min.js'></script> 
+    <script type='text/javascript' src='http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js'></script> 
+   
+    <script type="text/javascript">
+	function order(mOrder){
+		$.getJSON('/setOrder?mAction=' + mOrder , function(data) {
+			console.log(data)
+		})
+	}
+	 		 
+		 
+	</script> 
+</head> 
+     
+<body > 
+     <div data-role='page'>
+     <div data-role='content'  >
+     <div data-role="controlgroup" data-type="horizontal">
+		<!-- cuando se clica enviamos la orden al servidor --> 
+     	<a href="#" onclick="javascript:order('next')" data-role="button">next </a>
+		<a href="#" onclick="javascript:order('prev')" data-role="button">prev </a>
+	</div>
+	</div> 
+	</div> 
+</body> 
+</html>

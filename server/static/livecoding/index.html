@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>.. Medialab live coding ..</title>
+    <meta name="author" content="Victor Diaz"> 
+	<script src="processing.js" type="text/javascript"></script>
+	<script type="text/javascript">function getProcessingSketchID () { return 'canvas'; }</script> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> 
+	<script src="application.js" type="text/javascript"></script>
+	
+    <link rel="stylesheet" href="demo/kitchen-sink/styles.css" type="text/css" media="screen" charset="utf-8"> 
+
+</head>
+<body class="qq">
+
+<!-- canvas -->  
+<div id = "previewcontainter">
+
+<div id = "canvascontainer"> 
+<canvas class = "display" data-processing-sources="fachadaMedialabPradoPequenya.pde" width="192" height="157">
+
+<p>Your browser does not support the canvas tag.</p>
+</canvas>
+<noscript>
+<p>JavaScript is required to view the contents of this page.</p>
+</noscript>
+</div> 
+
+<div id = "infobox"> 
+	<ul> 
+		<li> Conectado a Internet </li>
+		<li> Conectado </li>
+		
+	</ul> 
+	
+	
+</div> 
+
+<details open="open">
+	<summary>Consola de información</summary>
+	<p>qq</p>    
+</details>
+ 
+<footer>
+<a href = "http://www.uncoded.es"> ▒▒▒▒▒▒▒▒▒ realizado por Uncoded.es ▒▒ </a>
+</footer>
+
+</div>
+
+
+<div id="editor"> </div>
+
+
+
+	<!--
+	<svg viewBox="-10 -10 120 120" preserveAspectRatio="none">
+	  <defs><path id="svgPath"
+	          d="M 0,100
+	             C 0,0  40,0  50,0
+	             C 60,0 100,0 100,100 Z" /></defs>
+	  <use xlink:href="#svgPath" stroke="green" stroke-width="8"
+	       fill="yellow" />
+	</svg>
+	--> 
+
+
+<!-- DEVEL-->
+<script type="text/javascript">
+var require = {
+	baseUrl: window.location.protocol + "//" + window.location.host + window.location.pathname.split("/").slice(0, -1).join("/"),
+	paths: {
+		ace: "lib/ace"
+	}
+};
+</script>
+
+<!-- ace editor -->
+<script src="src/ace.js" data-main="demo" type="text/javascript"></script>  
+<script src="src/theme-twilight.js" type="text/javascript" charset="utf-8"></script>
+<script src="src/mode-javascript.js" type="text/javascript" charset="utf-8"></script> 
+ 
+<script>
+window.onload = function() {
+	var editor = ace.edit("editor");
+	editor.setTheme("ace/theme/twilight"); 
+	var textarea = $('textarea[name="editor"]').hide();
+	var JavaScriptMode = require("ace/mode/javascript").Mode;
+	var event = require("ace/lib/event");  
+	var EditSession = require("ace/edit_session").EditSession;
+	var UndoManager = require("ace/undomanager").UndoManager;
+
+	
+	
+	var session = editor.getSession()
+	session.setMode(new JavaScriptMode()); 
+	var renderer = editor.renderer;
+    session.setWrapLimitRange(40, 40);
+    renderer.setPrintMarginColumn(-12);
+	
+	session.on('change', function () { 
+		source = session.getValue(); 
+		reloadCanvas(source);  
+	}); 
+	
+	editor.renderer.setShowPrintMargin = null; 
+	
+} 
+
+	
+
+// refresh canvas
+function reloadCanvas(source) {
+	var canvasHTML = '<canvas class = "display"></canvas>';	
+		
+	// reload canvas 
+	$("canvas").remove();
+	$("p").remove();
+			
+	$("#canvascontainer").append(canvasHTML);
+	try {
+		p = null;
+		//alert(source);
+		p = new Processing($("canvas")[0],source);
+	} catch(e) {
+		//alert("There was a glitch in the matrix...\n\n"+ e.name +"\n\n" + e.message);
+	}
+	//$("#display").fadeIn("normal");
+}
+
+
+</script>
+
+
+	<script>
+	var elem = document.querySelector('body');
+    //enterFullscreen();
+
+
+	
+	function inputChange(e) {
+	  if (e.results) { // e.type == 'webkitspeechchange'
+	    for (var i = 0, result; result = e.results[i]; ++i) {
+	      console.log(result.utterance, result.confidence);
+	    }
+	    console.log('Best result: ' + this.value);
+	  }
+	}
+
+	var input = document.querySelector('[x-webkit-speech]');
+	input.addEventListener('change', inputChange, false);
+	input.addEventListener('webkitspeechchange', inputChange, false); 
+	
+	document.addEventListener('webkitvisibilitychange', function(e) {
+	  console.log('hidden:' + document.webkitHidden,
+	              'state:' + document.webkitVisibilityState)
+	}, false); 
+	
+	//mira si hay conectividad a interner o no 
+	window.addEventListener('online', function(e) {
+	  // Re-sync data with server.
+	}, false);
+
+	window.addEventListener('offline', function(e) {
+	  // Queue up events for server.
+	}, false); 
+	
+	//pasteo de archivos 
+	document.body.onpaste = function(e) { 
+	  var items = e.clipboardData.items; 
+		console.log(items);
+	  for (var i = 0; i < items.length; ++i) {
+	    if (items[i].kind == 'file' && items[i].type == 'image/png') {
+	      var blob = items[i].getAsFile();
+
+	      var img = document.createElement('img');
+	      img.src = window.URL.createObjectURL(blob);
+		  console.log(img.src); 
+	      document.body.appendChild(img);
+	    }
+	  }
+	}; 
+	
+	//drag and drop 
+	var reader = new FileReader();
+	reader.onload = function(e) {
+	  document.querySelector('img').src = e.target.result;
+	};
+
+	function onDrop(e) {
+	  reader.readAsDataURL(e.dataTransfer.files[0]);
+	};
+	
+	/* 
+	window.webkitNotifications.requestPermission();
+    window.webkitNotifications.createNotification(
+	        'icon.png', 'Notification Title', 'Notification content...');
+
+	window.webkitNotifications.createHTMLNotification('http://someurl.com');
+	
+	notification_test = createNotificationInstance({notificationType: 'html'});
+    notification_test.ondisplay = function() {   };
+    notification_test.onclose = function() {   };
+    notification_test.show();
+	*/ 
+	
+	</script> 
+	
+	
+<!--DEVEL -->
+  
+<!--PACKAGE
+  <script src="demo/kitchen-sink/kitchen-sink-uncompressed.js" data-ace-base="src" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+    require("kitchen-sink/demo");
+  </script>
+<!--PACKAGE-->
+
+</body>
+</html>

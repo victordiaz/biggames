@@ -1,0 +1,62 @@
+@font-face { font-family: visitor1; src: url('../fonts/visitor1.ttf'); } 
+@font-face { font-family: visitor2; src: url('../fonts/visitor2.ttf'); } 
+
+body{
+	font-family: visitor1;
+	font-size: 10px;
+	color: #444;
+}
+#screen{
+	background-color: #999;
+	position: fixed;
+	overflow: hidden;
+	top:    40px;
+	left:   40px;
+	height: 156px;
+	width:  192px;
+	cursor: crosshair;
+	color: #fff;
+	text-align: center;
+}
+.commonElement{
+	position: fixed;
+	overflow: hidden;
+	background-color: black;
+}
+#topbar{
+	top:40px;
+	left:112px;
+	height: 16px;
+	width: 48px;		
+}
+#middlebar{
+	top:56px;
+	left: 76px;
+	height: 16px;
+	width: 120px;
+}
+
+#contentbar{
+	top:    72px;
+	left:   40px;
+	height: 125px;
+	width:  192px;
+}
+
+.slide{
+	height: 125px;
+	width:  192px;
+	background-color: pink;
+	position:fixed;
+	left:40px;
+}
+.currentSlide{
+	height: 125px;
+	width:  192px;
+	background-color: red;
+	position:static;
+}
+#content{
+	position:relative;
+	left:250px;
+}

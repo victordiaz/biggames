@@ -1,0 +1,166 @@
+/*****************************************************************************/
+/*
+/* Common
+/*
+/*****************************************************************************/
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+    background-color: #fff;
+} 
+
+#clouds {
+z-index: -1;
+background: url(/images/clouds.png);
+} 
+
+body {
+  background-color: #eeffec; 
+  background:url(/images/bg/concrete_wall.png); 
+  margin: 0px auto 0px auto; padding: 0px 0px 0px 0px; 
+
+
+  background-repeat: repeat; 
+  font: 13.34px helvetica, arial, clean, sans-serif;
+  font-size: small; 
+	
+} 
+
+#content {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	float: left;
+	text-align: center;
+	width: 100%;
+	top: 45%;
+	vertical-align: middle;
+	position: relative;
+} 
+
+
+#cursor { 
+	-moz-border-radius: 205px; 
+	-webkit-border-radius: 205px; 
+	-o-border-radius: 205px; 
+	border-radius: 205px;  
+	
+	border: 5px solid #00b; 
+	
+} 
+
+#cursorcontrol { 
+	-moz-border-radius: 25px; 
+	-webkit-border-radius: 25px; 
+	-o-border-radius: 25px; 
+	border-radius: 25px;    
+} 
+
+#logo { 
+    width: auto;
+    text-align: center;
+    vertical-align: middle;
+    height: 100%;
+    font-family: serif;
+    font-size: 2.8em;
+    color: rgba(0, 0, 0, 0.05);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);    
+}
+
+.button { 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	-o-border-radius: 5px; 
+	border-radius: 5px; 
+	
+	-moz-box-shadow: 0px 1px 2px #222;
+	-webkit-box-shadow: 0px 1px 2px #222; 	
+	-o-box-shadow: 0px 1px 2px #222;
+	box-shadow: 5px 2px 12px #222;	
+	
+	background: rgba(0,255,0,0.8) url(/images/bg/concrete_wall.png); 
+    
+	border: 2px solid #222;
+} 
+
+.button:hover { 
+   	-moz-box-shadow: 0px 0px 0px #222;
+	-webkit-box-shadow: 0px 0px 0px #222; 	
+	-o-box-shadow: 0px 0px 0px #222;
+	box-shadow: 0px 0px 0px #222;
+} 
+
+.display { 
+    float:none;
+} 
+
+#canvascontainer { 
+   display: inline-block;
+}
+
+@keyframes float-clouds {
+    0% {
+        background-position: 2400px 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+@-moz-keyframes float-clouds {
+    0% {
+        background-position: 2400px 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+@-webkit-keyframes float-clouds {
+    0% {
+        background-position: 2400px 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+#clouds {
+      -webkit-animation-name: float-clouds;
+      -webkit-animation-duration: 95s;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+        -moz-animation-name: float-clouds;
+        -moz-animation-duration: 95s;
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-timing-function: linear;
+        animation-name: float-clouds;
+        animation-duration: 95s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+
+#qq:hover { 
+	
+	background-color: rgba(0, 0, 0, 0.5);
+	
+	-moz-transform: rotate(0deg) scale(0.95);
+	-webkit-transform: rotate(55deg) scale(0.2);
+	-o-transform: rotate(0deg) scale(0.95);
+	transform: rotate(0deg) scale(0.95);
+	
+	position: relative; 
+		
+	-webkit-transition: all 0.2s linear; 
+
+}
+
+
+
+
