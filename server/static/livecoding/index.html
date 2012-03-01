@@ -84,6 +84,8 @@ var require = {
  
 <script>
 window.onload = function() {
+
+	
 	var editor = ace.edit("editor");
 	editor.setTheme("ace/theme/twilight"); 
 	var textarea = $('textarea[name="editor"]').hide();
@@ -102,11 +104,21 @@ window.onload = function() {
 	
 	session.on('change', function () { 
 		source = session.getValue(); 
-		reloadCanvas(source);  
+		reloadCanvas(source); 
+		localStorage.setItem('code', source);
 	}); 
 	
 	editor.renderer.setShowPrintMargin = null; 
-	
+
+	q = localStorage.getItem('code')
+	if (localStorage.getItem('code')) { 
+		session.setValue(q);
+    
+	} else { 
+		jQuery.get('./fachadaMedialabPradoPequenya.pde', function(data) {
+	    	session.setValue(data);
+		}); 
+	}
 } 
 
 	
