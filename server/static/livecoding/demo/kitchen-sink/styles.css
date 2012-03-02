@@ -133,4 +133,15 @@ footer {
     padding:8px;
     padding-left:12px;
     text-align: left; 
+} 
+
+summary {
+    margin-bottom: 12px;
 }
+
+
+
+label { 
+    margin: 8px;  
+    
+} 
