@@ -21,7 +21,8 @@ class Server:
 
   def __init__(self):
     self.indexText = None
-    self.order="none"
+    self.order="none" 
+    self.code="none"
     cherrypy.config["tools.encode.on"] = True
     cherrypy.config["tools.encode.encoding"] = "utf-8"
 
@@ -51,11 +52,11 @@ class Server:
   @cherrypy.expose
   def getAction(self):
 	cherrypy.response.headers['Content-Type']= 'text/event-stream; charset=utf-8 \n\n'
-  	print "qq"  
   	tmp_order = self.order;
   	self.order = "none"
   	return "data:"+  tmp_order +"\n\n"
   
+
   #lo que recibe del control remoto 
   @cherrypy.expose		
   def setOrder(self, mAction = None):
@@ -69,6 +70,27 @@ class Server:
       else:
         return 'No2'
 
+  
+  
+  #codigo recibido de los clientes 
+  @cherrypy.expose
+  def setCode(self, **code): 
+    print "hola que tal!!"
+    self.code = code['code'] 
+
+    return "OK"
+  
+ 
+  
+  #codigo para setear al servidor 
+  @cherrypy.expose
+  def getCode(self):
+    cherrypy.response.headers['Content-Type']= 'text/event-stream; charset=utf-8 \n\n'
+    tmp_order = self.code; 
+    print self.code
+    
+    self.code = "none"
+    return "data:"+  tmp_order +"\n\n"
   
  
 
