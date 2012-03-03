@@ -194,7 +194,8 @@ body {
 
 .menuitem { 
 
-    text-align: center;
+    float: left;
+    /* text-align: center; */
 }
 
 .people { 
