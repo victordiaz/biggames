@@ -1,0 +1,66 @@
+---
+layout: default
+--- 
+
+<div class = "container contenido" >  
+<div class = "row"> 
+
+<div class = "eight columns"> 
+	<div class = "project_full">
+	 <!-- div class = "grid_12" id="post"> --> 
+
+	{{ content }} 
+	
+	</div> 	
+</div>  
+
+
+<div class = "four columns"> 
+<div class = "project_info">
+
+
+	{% if page.recentactivities != null %} 
+	<h3> Recent Activity </h3> 
+	<ul> 
+	{% for recentactivity in page.recentactivities %} 
+	<li class = "liseparator">{{ recentactivity }}</li>
+	{% endfor %} 
+	</ul> 
+	{% endif %} 
+
+	
+	{% if page.cv != null %} 
+	<h3> Curriculum </h3> 
+	<ul> 
+	<li>{{ page.cv }}</li>
+	</ul> 
+	{% endif %} 
+	
+	
+	
+	{% if page.links != null %} 
+	<h3> Links </h3> 
+	<ul> 
+	{% for link in page.links %} 
+	<li>{{ link }}</li>
+	{% endfor %} 
+	</ul> 
+	{% endif %} 
+	
+	{% if page.mentions != null %} 
+	<h3> Mentions </h3> 
+	<ul> 
+	{% for mention in page.mentions %} 
+	<li>{{ mention }}</li>
+	{% endfor %} 
+	</ul> 
+	{% endif %}
+
+	<br /> 
+</div>
+</div> 
+
+</div> 
+
+</div> 
+

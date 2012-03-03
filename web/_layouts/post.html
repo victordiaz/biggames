@@ -1,0 +1,147 @@
+---
+layout: default
+--- 
+
+
+<div class="row">	
+
+<div class = "twelve columns"> 
+
+</div> 
+</div>
+
+<div class="row">	
+<div class = "eight columns"> 
+	
+	<div class = "project_full"> 
+		
+		<div class = "qq5">
+		<h1>
+		{{ page.title }} 
+		</h1> 
+	
+		</div> 
+	
+		{{ content }} 
+	
+	</div> 
+	
+
+	{% if page.images != null %} 
+	<div class = "content"> 
+	<h3> Extra images </h3> 
+	<div class="b_imagenes"> 
+			{% for image in page.images %} 
+			<a rel="example_group" href="/images/{{page.img}}/big/{{ image }}" title="img"><img alt="" src="/images/{{page.img}}/thumb/{{ image }}" /></a> 
+			{% endfor %} 
+	</div> 
+	</div> 
+	{% endif %} 
+	
+
+	
+</div>
+<div class = "four columns"> 
+<div class = "project_full, project_info">
+
+<!--  
+	<img width="125px" height="125px" src="{{page.root}}/images/{{page.img|downcase}}/preview.jpg" />  
+	
+	--> 
+
+{% if page.type != null %} 
+<h3> Project type: </h3> 
+<ul> 
+<li> {{ page.type }} </li> 
+</ul> 
+{% endif %} 
+
+{% if page.context != null %} 
+<h3> Context: </h3> 
+<ul> 
+<li> {{ page.context }} </li> 
+</ul> 
+{% endif %} 
+
+{% if page.when != null %} 
+<h3> When: </h3> 
+<ul> 
+<li> {{ page.when }} </li> 
+</ul> 
+
+{% endif %} 
+
+
+{% if page.technologies != null %} 
+<h3> Used Technologies: </h3> 
+
+	<ul> 
+		{% for technology in page.technologies %} 
+		<li> {{ technology }} </li> 
+		{% endfor %} 
+		{% endif %} 
+	</ul> 
+
+
+{% if page.task != null %} 
+<h3> My task: </h3> 
+	<ul> 
+	<li>{{ page.task }}</li>
+	</ul> 
+{% endif %} 
+
+
+
+{% if page.collaborators != null %} 
+<h3> Developed with: </h3> 
+	<ul> 
+		{% for collaborator in page.collaborators %} 
+		<li>{{ collaborator }}</li>
+		{% endfor %} 
+	</ul> 
+{% endif %} 
+
+
+
+{% if page.sourcecode != null %} 
+<h3> Sourcecode: </h3> 
+	<li>{{ page.sourcecode }}</li> 
+{% endif %} 
+
+{% if page.link != null %} 
+<h3> Link: </h3> 
+	<ul>
+		{% for l in page.link %} 
+		<li><a href={{ l }}> {{l}} </a></li> 
+		{% endfor %} 
+	</ul> 
+{% endif %} 
+
+</div>
+</div> 
+
+
+</div> <!-- row --> 
+
+
+<div class="row">	
+<div class = "eight columns"> 
+	
+	<div class="moreprojects">
+	<h1> More projects </h1>
+	<ul class="qq2"> 
+	{% for project in site.pages %}
+	{% if project.category contains 'project' or project.category contains 'hack' %}  
+		<li> 
+		<a class="has-tip right" id="{{project.img}}" data-width="120px" title="{{project.title}}" href="{{root}}{{ project.url }}"> 
+		<img src="{{root}}/images/{{project.img|downcase}}/preview.jpg" />  
+	
+		</a> 
+		</li> 	
+	{% endif %}  	
+	{% endfor %}  
+	</ul>
+	</div>
+</div> <!-- row --> 
+
+
