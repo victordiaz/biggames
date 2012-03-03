@@ -131,12 +131,14 @@ body {
 		background-color: rgba(255,255,255,0.9);
 		box-shadow: 10px 0px 10px rgba(0,0,0,0.1) , -10px 0px 10px rgba(0,0,0,0.1);
 		min-height: 500px;
-		padding: 10px;
+		padding: 15px;
+		padding-bottom: 50px;
 		margin-bottom: 30px;
 		margin-top: 30px !important;
 	}
 	.menu { 
-	    text-align: right;   
+	    text-align: center;
+	    padding-left: 0px; 
     } 
 	
 	footer{
@@ -168,6 +170,11 @@ body {
 	{
 		content:url('../images/menu/tech2.png') url('../images/menu/project2.png')   url('../images/menu/wshop2.png') url('images/menu/people2.png')
 		display: none;
+	}
+	
+	h1{
+		color:#BA2E3A;
+		font-size: 1.5em;	
 	}
 
 	
