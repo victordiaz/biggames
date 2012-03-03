@@ -15,6 +15,13 @@ html, body {
 
 } 
 
+
+.header {
+    margin-bottom: 25px;
+}
+
+
+
 #clouds {
     z-index: -1;
     background: url('../images/bg/clouds.png');
@@ -74,52 +81,6 @@ body {
 } 
 
 
-.menu {
-    padding:0px;
-    margin:0px;
-    padding-top:5px; 
-    padding-bottom:15px; 
-    margin:0;
-    white-space:nowrap;
-    list-style-type:none; 
-    width: 100%; 
-    text-align: right;
-    color: #555;
-    text-transform: uppercase; 
-} 
-
-
-.menu a { 
-	
-	color: #555;
-	padding:5px; 
-
-	margin: 2px;
-	font-family: arial, helvetica, sans-serif; 
-	font-size: 1.2em; 
-	font-weight:10000;
-
-	line-height: 10px;
-	letter-spacing: -1px; 
-	
-} 
-
-.menu a.selected {
-	color: #eee; 
-
-} 
-
-.menu a:hover { 
-	color: #eee; 
-
-} 
-
-
-.menu a:visited { 
-
-
-} 
-
 
 	#wshop{
 		background: url('../images/menu/wshop.png') ;
@@ -157,8 +118,8 @@ body {
 		background-position: 0 0;
 		background-repeat: no-repeat;
 		margin:0px;
-	}
-	
+	} 
+
 	.content{
 		background-color: rgba(255,255,255,0.9);
 		box-shadow: 10px 0px 10px rgba(0,0,0,0.1) , -10px 0px 10px rgba(0,0,0,0.1);
@@ -208,12 +169,18 @@ body {
 	
 
 
-
 .listaitem {
+    padding: 12px;
+    margin-bottom: 25px;
+
+}
+
+
+.listaitem .six {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     padding: 12px;
-    margin-bottom: 15px;
+
 
 }
 
@@ -221,7 +188,6 @@ body {
 .listaitem img {
     border: 2px solid black;
 }
-
 
 
 
