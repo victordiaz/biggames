@@ -128,8 +128,11 @@ body {
 		margin-bottom: 30px;
 		margin-top: 30px !important;
 	}
+	.menu { 
+	    text-align: right;   
+    } 
 	
-	.footer{
+	footer{
 		background-color: rgba(0,0,0,0.68);
 		margin-top: 100px;
 		padding-top:30px;
