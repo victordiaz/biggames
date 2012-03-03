@@ -8,13 +8,29 @@ title: Main
 
 
 <!-- no encontrado -->
-<div class="row header notyet"> 
-<div class = "eight columns"> 
-	<img src="images/noencontrado.png" alt="no encontrado">
-</div> 
-<div class = "four columns"> 
-	<h2>Aun no tiene contenido!</h2>
-</div> 
+<div class="row header"> 
+	
+<ul class="block-grid five-up mobile project_preview">
+		
+    {% for people in site.pages %} 
+	{% if people.category contains 'participant' %}  
+	
+	<li class = "people"> 
+		<a href="{{root}}notyet.html"> 
+			<!-- not yet 
+			<a href="{{root}}{{ people.url }}"> 
+			-->
+		  	<img src="{{root}}/images/people/{{people.img|downcase}}" alt="{{people.name}}"/>  
+			<p> {{people.name}}  </p> 		
+		</a> 
+	
+	</li> 
+	
+	{% endif %}  	
+    {% endfor %}  
+
+</ul> 
+
 
 </div>
 
