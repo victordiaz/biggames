@@ -121,6 +121,94 @@ body {
 } 
 
 
+	#wshop{
+		background: url('../images/menu/wshop.png') ;
+	}
+	#wshop:hover{
+		background: url('../images/menu/wshop2.png') ;
+	}
+	
+	#people{
+		background: url('../images/menu/people.png') ;
+	}
+	#people:hover{
+		background: url('../images/menu/people2.png') ;
+	}
+	
+	#project{
+		background: url('../images/menu/project.png') ;
+	}
+	#project:hover{
+		background: url('../images/menu/project2.png') ;
+	}
+	
+	#tech{
+		background: url('../images/menu/tech.png') ;
+	}
+	#tech:hover{
+		background: url('../images/menu/tech2.png') ;
+	}
+	
+	.myButtonLink {
+		display: inline-block;
+		width: 98px;
+		height: 105px;
+		text-indent: -99999px;
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		margin:0px;
+	}
+	
+	.content{
+		background-color: rgba(255,255,255,0.9);
+		box-shadow: 10px 0px 10px rgba(0,0,0,0.1) , -10px 0px 10px rgba(0,0,0,0.1);
+		min-height: 500px;
+		padding: 10px;
+		margin-bottom: 30px;
+		margin-top: 30px !important;
+	}
+	
+	.footer{
+		background-color: rgba(0,0,0,0.68);
+		margin-top: 100px;
+		padding-top:30px;
+		color:white;
+	}
+	#man{
+		background-image: url('../images/menu/man.png') ;
+		position: absolute;
+		top:200px;
+		left:-120px;
+		width: 104px;
+		height: 159px;
+		background-repeat: no-repeat;
+	}
+
+	#woman{
+		background-image: url('../images/menu/woman.png') ;
+		position: absolute;
+		top:50px;
+		left:700px;
+		width: 75px;
+		height: 157px;
+		background-repeat: no-repeat;
+	}
+	body:after
+	{
+		content:url('../images/menu/tech2.png') url('../images/menu/project2.png')   url('../images/menu/wshop2.png') url('images/menu/people2.png')
+		display: none;
+	}
+
+	
+/*
+	.myButtonLink:hover {
+		background-position: 106 0;
+	}
+*/
+	
+
+
+
 .listaitem {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
