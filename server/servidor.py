@@ -23,6 +23,8 @@ class Server:
     self.indexText = None
     self.order="none" 
     self.code="none"
+    self.video="none"
+    
     cherrypy.config["tools.encode.on"] = True
     cherrypy.config["tools.encode.encoding"] = "utf-8"
 
@@ -93,6 +95,28 @@ class Server:
     return "data:"+  tmp_order +"\n\n"
   
  
+ 
+  #codigo recibido de los clientes 
+  @cherrypy.expose
+  def setVideo(self, **video): 
+    print "hola que tal!!"
+    self.video = video['video'] 
+
+    return "OK"
+ 
+
+ 
+  #codigo para setear al servidor 
+  @cherrypy.expose
+  def getVideo(self):
+    cherrypy.response.headers['Content-Type']= 'text/event-stream; charset=utf-8 \n\n'
+    tmp_order = self.video; 
+    print self.video
+   
+    self.video = "none"
+    return "data:"+  tmp_order +"\n\n"
+ 
+
 
 
 

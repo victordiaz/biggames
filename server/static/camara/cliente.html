@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.min.js" type="text/javascript" charset="utf-8"></script> 
+</head>
+<body> 
+<h1>Cliente</h1>
+<img src="" id = "remotevideo" style="width:240px;height:400px"/> </img>
+
+<script type="text/javascript">
+
+$(document).ready(function() { 
+
+
+
+	var back2 = document.getElementById('remotevideo');
+
+	
+	getVideoListener(); 
+	
+	function getVideoListener() { 		
+	    source = new EventSource('../../getVideo')
+	    source.onmessage = function (event) { 
+		console.log(event.data);
+			if (event.data != "none") { 
+				back2.src = event.data; 
+				console.log("qq");
+			}
+
+		};
+	}
+
+
+}); 
+
+</script> 
+</body>
+</html>

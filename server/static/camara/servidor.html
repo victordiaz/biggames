@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.min.js" type="text/javascript" charset="utf-8"></script> 
+</head>
+<body> 
+<h1>Servidor</h1>
+<video autoplay></video>
+<canvas id = "localvideo"> </canvas>
+<img src="" id = "remotevideo" style="width:240px;height:400px"/> </img>
+
+<script type="text/javascript">
+
+$(document).ready(function() { 
+
+	var video = document.getElementsByTagName('video')[0], 
+       heading = document.getElementsByTagName('h1')[0];
+
+	if(navigator.getUserMedia) {
+  		navigator.getUserMedia('video', successCallback, errorCallback);
+  		function successCallback( stream ) {
+    		video.src = stream;
+  		}
+  		function errorCallback( error ) {
+    		heading.textContent = 
+        	"An error occurred: [CODE " + error.code + "]";
+  		}
+	} else {
+  		heading.textContent = 
+      	"Native web camera streaming is not supported in this browser!";
+	} 
+
+
+	// Grab the pixel data from the backing canvas
+
+	//var back = document.createElement('canvas');
+	var back = document.getElementById('localvideo');
+
+	var backcontext = back.getContext('2d');
+
+	cw = 120;//240;//video.clientWidth;
+	ch = 200;//400;//video.clientHeight;
+	console.log('width = ' + ch);
+	back.width = cw;
+	back.height = ch;
+	draw(video, backcontext, cw, ch);
+
+
+
+	function draw(v, bc, w, h) {
+		// First, draw it into the backing canvas
+		bc.drawImage(v, 0, 0, w, h);
+		send(back); 
+		// Grab the pixel data from the backing canvas
+		// Start over! 10 frames a second = 100milliseconds
+		setTimeout(function(){ draw(v, bc, w, h); }, 2000);
+
+	} 
+
+	var back2 = document.getElementById('remotevideo');
+
+	function send(back) { 
+
+		var stringData=back.toDataURL(); 
+		// send it on the wire
+	
+		$.post('../../setVideo/', {video:stringData}, function(data) {
+			console.log(data)
+		}); 
+	
+	} 
+	
+	//getVideoListener(); 
+	
+	function getVideoListener() { 		
+	    source = new EventSource('../../getVideo')
+	    source.onmessage = function (event) { 
+		console.log(event.data);
+			if (event.data != "none") { 
+				back2.src = event.data; 
+				console.log("qq");
+			}
+
+		};
+	}
+
+
+}); 
+
+</script> 
+</body>
+</html>
