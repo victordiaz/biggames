@@ -17,7 +17,7 @@ html, body {
 
 #clouds {
     z-index: -1;
-    background: url('../images/clouds.png');
+    background: url('../images/bg/clouds.png');
 }
 
 @keyframes float-clouds {
