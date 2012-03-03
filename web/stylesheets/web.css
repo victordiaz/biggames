@@ -192,6 +192,11 @@ body {
     border: 2px solid black;
 }
 
+.menuitem { 
+
+    text-align: center;
+}
+
 .people { 
 
     background-color: rgba(255, 255, 255, 0.5);
