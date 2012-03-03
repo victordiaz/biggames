@@ -83,41 +83,48 @@ body {
 
 
 	#wshop{
-		background: url('../images/menu/wshop.png') ;
+		background-image: url('../images/menu/wshop.png') ;
 	}
 	#wshop:hover{
-		background: url('../images/menu/wshop2.png') ;
+		background-image: url('../images/menu/wshop2.png') ;
 	}
 	
 	#people{
-		background: url('../images/menu/people.png') ;
+		background-image: url('../images/menu/people.png') ;
 	}
 	#people:hover{
-		background: url('../images/menu/people2.png') ;
+		background-image: url('../images/menu/people2.png') ;
 	}
 	
 	#project{
-		background: url('../images/menu/project.png') ;
+		background-image: url('../images/menu/project.png') ;
 	}
 	#project:hover{
-		background: url('../images/menu/project2.png') ;
+		background-image: url('../images/menu/project2.png') ;
 	}
 	
 	#tech{
-		background: url('../images/menu/tech.png') ;
+		background-image: url('../images/menu/tech.png') ;
 	}
 	#tech:hover{
-		background: url('../images/menu/tech2.png') ;
+		background-image: url('../images/menu/tech2.png') ;
 	}
 	
 	.myButtonLink {
 		display: inline-block;
 		width: 98px;
-		height: 105px;
-		text-indent: -99999px;
+/* 		height: 105px; */
 		background-position: 0 0;
 		background-repeat: no-repeat;
 		margin:0px;
+		padding-top:95px;
+		text-align: center;
+		overflow: hidden;
+		color:black;
+		font-weight: bold;
+	}
+	.myButtonLink:hover{
+		color:#34494C ;
 	} 
 
 	.content{
