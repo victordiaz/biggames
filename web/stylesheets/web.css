@@ -121,13 +121,18 @@ body {
 } 
 
 
+.listaitem {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 15px;
+
+}
 
 
-
-
-
-
-
+.listaitem img {
+    border: 2px solid black;
+}
 
 
 
