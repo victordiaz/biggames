@@ -176,8 +176,22 @@ body {
 		color:#BA2E3A;
 		font-size: 1.5em;	
 	}
-
 	
+	h2{
+		color:#33484C;
+		font-size: 1.2em;	
+	}
+
+	div.module{
+		padding-left: 10px;
+		/* background-color: #F2FEFF; */
+		border-width: 1px;
+		border-color:#9EDDE6;
+		border-style: dashed; 
+		margin-top:20px;
+		margin-bottom: 20px;
+		padding: 10px;
+	}
 /*
 	.myButtonLink:hover {
 		background-position: 106 0;
