@@ -10,7 +10,12 @@ jQuery(document).ready(function(){
     goTo(1)
     MAX_SLIDE=3
 });
-		
+
+function pullNewSlides(){
+
+total_slides
+
+}		
 		
 function arrange_slides() {
     //console.log('arrangeslide')
@@ -44,11 +49,16 @@ function stListener(){
  		} else if(event.data=='prev') {
  			prev();
  			console.log(event.data);
- 		}
- 		
- 		console.log(current_slide); 
+ 		} 		
+ 		console.log(event); 
 
 	};
+	
+	source.addEventListener("change", function( e ) {
+		console.log(e.data);
+		 console.log(JSON.parse(e.data) );
+	
+		}, false);
 }
 		
 function next() {

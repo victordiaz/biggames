@@ -11,7 +11,8 @@ Este codigo tiene licencia GPL asi que ya sabes, si lo modificas tienes que envi
 import cherrypy
 import simplejson
 import string
-
+import os
+import json;
 from jinja2 import Environment, FileSystemLoader
 env = Environment(loader=FileSystemLoader('templates'))
 
@@ -56,7 +57,10 @@ class Server:
 	cherrypy.response.headers['Content-Type']= 'text/event-stream; charset=utf-8 \n\n'
   	tmp_order = self.order;
   	self.order = "none"
-  	return "data:"+  tmp_order +"\n\n"
+  	if (tmp_order=="change"):
+  		return self.returnFolder()
+  	else:
+	  	return "data:"+  tmp_order +"\n\n"
   
 
   #lo que recibe del control remoto 
@@ -71,8 +75,40 @@ class Server:
         return 'No1'
       else:
         return 'No2'
-
   
+  #control: List team foldersgetTeams 
+  @cherrypy.expose		
+  def getTeams(self):
+  	dirs=[]
+  	for dirname, dirnames, filenames in os.walk('./static/presentation/contenidos/'):
+  		dirs.append(dirname)
+  	return json.dumps(dirs)	  
+  	
+  #control: list folders for each time		
+  @cherrypy.expose
+  def getFolder(self,team):
+	dirs=[]
+  	for dirname, dirnames, filenames in os.walk('./static/presentation/contenidos/'+team):
+  		dirs.append(dirname)
+  	return json.dumps(dirs)
+
+  #control: set current folder on screen
+  @cherrypy.expose
+  def setFolder(self,path): 
+  	self.current_path=path
+  	self.order="change"
+  	
+  def returnFolder(self):
+  	print "returnFOLDER------------------"  
+  	n_slides=0
+  	for dirname, dirnames, filenames in os.walk('./static/presentation/contenidos/'+self.current_path):
+  		n_slides+=1
+	cherrypy.response.headers['Content-Type']= 'text/event-stream; charset=utf-8 \n\n'
+	msg="event: change\n"
+	msg+= 'data: {"path": "'+self.current_path+'", "slides":"'+str(n_slides) +'"} \n\n'
+	print msg
+	
+	return msg
   
   #codigo recibido de los clientes 
   @cherrypy.expose
