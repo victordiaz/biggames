@@ -1348,3 +1348,18 @@ timeout: timed out
 [04/Mar/2012:21:27:40] ENGINE Bus EXITING
 [04/Mar/2012:21:27:40] ENGINE Bus EXITED
 [04/Mar/2012:21:27:40] ENGINE Waiting for child threads to terminate...
+[05/Mar/2012:21:34:43] ENGINE Listening for SIGHUP.
+[05/Mar/2012:21:34:43] ENGINE Listening for SIGTERM.
+[05/Mar/2012:21:34:43] ENGINE Listening for SIGUSR1.
+[05/Mar/2012:21:34:43] ENGINE Bus STARTING
+[05/Mar/2012:21:34:43] ENGINE Started monitor thread '_TimeoutMonitor'.
+[05/Mar/2012:21:34:43] ENGINE Serving on 0.0.0.0:8081
+[05/Mar/2012:21:34:43] ENGINE Bus STARTED
+[05/Mar/2012:21:58:14] ENGINE Keyboard Interrupt: shutting down bus
+[05/Mar/2012:21:58:14] ENGINE Bus STOPPING
+[05/Mar/2012:21:58:14] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8081)) shut down
+[05/Mar/2012:21:58:14] ENGINE Stopped thread '_TimeoutMonitor'.
+[05/Mar/2012:21:58:14] ENGINE Bus STOPPED
+[05/Mar/2012:21:58:14] ENGINE Bus EXITING
+[05/Mar/2012:21:58:14] ENGINE Bus EXITED
+[05/Mar/2012:21:58:14] ENGINE Waiting for child threads to terminate...
