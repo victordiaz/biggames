@@ -26,6 +26,8 @@ class Server:
     self.order="none" 
     self.code="none"
     self.video="none"
+    self.img = "none"
+    self.showlivecode = "none"
     
     cherrypy.config["tools.encode.on"] = True
     cherrypy.config["tools.encode.encoding"] = "utf-8"
@@ -163,12 +165,30 @@ class Server:
     return "data:"+  tmp_order +"\n\n"
  
 
-#codigo recibido de los clientes 
-@cherrypy.expose
-def savePNG(self, **img): 
-    print "hola que tal!!"
-    self.img = img['img'] 
+  #codigo recibido de los clientes 
+  @cherrypy.expose
+  def savePNG(self, **img): 
+      print "hola que tal!!"
+      self.img = img['img'] 
+      return "OK"
+
+
+  #codigo recibido de los clientes 
+  @cherrypy.expose
+  def setConfig(self, **params): 
+    self.livecodeshow = params['livecodeshow'] 
+    
     return "OK"
+
+
+  #codigo para setear al servidor 
+  @cherrypy.expose
+  def getConfig(self):
+    cherrypy.response.headers['Content-Type']= 'text/event-stream; charset=utf-8 \n\n'
+    tmp_order = self.livecodeshow; 
+   
+    self.livecodeshow = "none"
+    return "data:"+  tmp_order +"\n\n"
 
 
 

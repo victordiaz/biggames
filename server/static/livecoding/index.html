@@ -31,9 +31,9 @@
 
   <div id="codeoncanvas"> 
 	<ul> 
-		<li id = "li0"> 14: fill(255); </li>
-		<li id = "li1"> 15: ellipse(25, 25, 12, 12); </li>
-		<li id = "li3"> 16: for (int i = 0; i < 0; i++) { </li>
+		<li id = ""><span id="linum0" class = "codenum">  </span> <span id="li0">  </span> </li>
+		<li id = ""><span id="linum1" class = "codenumselected">  </span> <span id="li1">  </span> </li>
+		<li id = ""><span id="linum2" class = "codenum">  </span> <span id="li2">  </span> </li>
 
 	</ul> 
 	
@@ -82,8 +82,12 @@
 	<input type="checkbox" id="fachada" />
 	<label for="fachada">Este ordenador es la fachada</label>
 	<br /> 
+	<input type="checkbox" id="muestracodigo" />
+	<label for="muestracodigo">Muestra Código</label>	
+	<br /> 
 	<input type="checkbox" id="notificaciones" />
 	<label for="notificaciones">Notificaciones</label>
+	<br /> 
 	
 
 </details>
@@ -187,15 +191,29 @@ window.onload = function() {
     notification_test.onclose = function() {   };
     notification_test.show();
 	*/ 
-	  
-	session.on('change', function () { 
+	
+	function updateCodeLive() { 
 		//var editor = ace.edit("editor"); 
 		var cursorPosition = editor.getCursorPosition(); 
-		
+
 		numLine = cursorPosition['row']; 
+		previousLine = session.getDocument().$lines[numLine - 1]; 
 		currentLine = session.getDocument().$lines[numLine]; 
+		nextLine = session.getDocument().$lines[numLine + 1]; 
+
+		$('#linum0').text(numLine); 
+		$('#linum1').text(numLine + 1);  
+		$('#linum2').text(numLine + 2); 
+
+		$('#li0').text(previousLine); 
+		$('#li1').text(currentLine);  
+		$('#li2').text(nextLine); 
+
 		
-		$('#li1').text(currentLine); 
+	} 
+	  
+	session.on('change', function () { 
+		updateCodeLive(); 
 		
 		console.log(currentLine); 
 		if (liveCoding == true) {
@@ -204,6 +222,12 @@ window.onload = function() {
 		
 		
 	}); 
+	
+	editor.getSession().selection.on('changeCursor', function () { 
+		updateCodeLive(); 
+		
+	});
+	
 	
 	editor.renderer.setShowPrintMargin = null; 
 
@@ -392,6 +416,8 @@ function reloadCanvas(source) {
 		$("#liveCoding").button();    
 		$("#fachada").button();    
 		$("#notificaciones").button();    
+		$("#muestracodigo").button();    
+		
 		
 		
 		$('#liveCoding').click (function () { 		
@@ -412,9 +438,22 @@ function reloadCanvas(source) {
 		$('#notificaciones').click (function () { 		
 			$(this).is (':checked') ? window.webkitNotifications.requestPermission() : liveCoding = false; 
 
+		}); 
+	
+		$('#muestracodigo').click (function () { 		
+			$('#muestracodigo').is (':checked') ? showLiveCode(true) : showLiveCode(false); 
+
 		});
 	
-		
+		function showLiveCode(visibility) { 
+			if (visibility == true) { 
+				$('#codeoncanvas').show(); 
+			} else { 
+				$('#codeoncanvas').hide(); 
+				
+			}
+		}
+	
 		
  	}); 
 
