@@ -5,7 +5,7 @@ jQuery(document).ready(
         $('#screen').mousemove(function(e){
 	    $('#status').html( e.pageX +', '+ e.pageY);
     })
-    MAX_SLIDE=14
+    MAX_SLIDE=41
 	
 	init_slides();	
     arrange_slides();
@@ -17,19 +17,28 @@ jQuery(document).ready(
 function init_slides(){
 	current_slide=1;
 	var count=1
-	for (count; count<15; count+=1){
+	for (count; count<13; count+=1){
 		if(count==1)
 			$('#otherSlides').append('<div id="n_'+count+ '"  class="currentSlide"> <img src="slides/t'+count+ '.png"> </div>')
 		else	
 			$('#otherSlides').append('<div id="n_'+count+ '"  class="slide"> <img src="slides/t'+count+ '.png"> </div>')
 	}
-	
-	/**for (var count=1; count<12; count+=1){
-		$('#otherSlides').append('<div id="n_'+count+ ' "  class="slide"> <img src="slides/s'+count+ '.png"> </div>')	
+	console.log(count)
+
+	for (var part_count=1; part_count<14; part_count+=1){
+		$('#otherSlides').append('<div id="n_'+count+ '"  class="slide"> <img src="slides/c'+part_count+ '.png"> </div>')	
+		count+=1
 	}
-	for (var count=1; count<6; count+=1){
-		$('#otherSlides').append('<div id="n_'+count+ ' "  class="slide"> <img src="slides/f'+count+ '.png"> </div>')	
-	}**/
+	for (var part_count=1; part_count<7; part_count+=1){
+		$('#otherSlides').append('<div id="n_'+count+ '"  class="slide"> <img src="slides/f'+part_count+ '.png"> </div>')	
+		count+=1
+	}
+	
+	for (var part_count=1; part_count<8; part_count+=1){
+		$('#otherSlides').append('<div id="n_'+count+ '"  class="slide"> <img src="slides/fo'+part_count+ '.png"> </div>')	
+		count+=1
+	}
+	
 }		
 		
 function arrange_slides() {
