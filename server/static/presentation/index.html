@@ -10,11 +10,50 @@
 	
 
 
+	<script> 
+
+	$(document).ready(function() { 
+	    var video = document.getElementById('webcam');1
+		var heading = document.getElementsByTagName('h1')[0];
+
+		if(navigator.getUserMedia || navigator.webkitGetUserMedia) { 
+			alert("qq");
+	  		//navigator.getUserMedia('video', successCallback, errorCallback);
+			navigator.webkitGetUserMedia('video', successCallback, errorCallback);
+
+	  		function successCallback( stream ) {
+				video.src = window.webkitURL.createObjectURL(stream);
+
+	    		//video.src = stream; //opera 
+
+
+	  		}
+	  		function errorCallback( error ) {
+	    		heading.textContent = 
+	        	"An error occurred: [CODE " + error.code + "]";
+				alert("qq5");
+
+	  		}
+		} else {
+	  		heading.textContent = 
+	      	"Native web camera streaming is not supported in this browser!";
+		} 
+
+
+	}); 
+
+	
+	function playVideo() { 
+		document.getElementById("video").play(); 
+		document.getElementById("webcam").play();
+		
+	} 
+	
+
+	</script>
 
     </head>
-    
-<html>
-<div id="screen">
+    <div id="screen">
 <div id="topbar" class="commonElement">
 BIG GAMES
 </div>
@@ -33,16 +72,19 @@ EXAMPLES
 	0, 0
 </h2>
 <button onclick="javascript:goTo(1)"> start </button>
-<button onclick="javascript:goTo(2)"> b </button>
+<button onclick="javascript:goTo(2)"> b </button> 
 <button onclick="javascript:goTo(3)"> c </button>
+<button onclick="javascript:playVideo()"> Play </button> 
+
 </div>
 
 <div id="otherSlides">
 <div id="n_1"  class="currentSlide">a </div>
 
-<div id="n_2" class="slide"> b</div>
+<div id="n_2" class="slide">  <video id="video" width="192px" height="125px" src="video_lara.webm" controls></video>
+</div>
 
-<div id="n_3" class="slide"> c</div>
+<div id="n_3" class="slide"> <video id="webcam"  width="192px" height="125px" ></video> </div>
 </div>
 
 </html>    

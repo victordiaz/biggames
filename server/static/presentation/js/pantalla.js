@@ -44,7 +44,10 @@ function stListener(){
  		} else if(event.data=='prev') {
  			prev();
  			console.log(event.data);
- 		}
+ 		} else if(event.data=='play') {
+     			playVideo();
+     			console.log(event.data);
+     	}
  		
  		console.log(current_slide); 
 
