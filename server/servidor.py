@@ -5,7 +5,8 @@ Autores:
     Sergio Galan Nieto. http://sergio.eclectico.net 
     Victor Diaz Barrales. http://www.victordiazbarrales.com
 
-Este codigo tiene licencia GPL asi que ya sabes, si lo modificas tienes que enviarnos los cambios! :) 
+Este codigo tiene licencia GPL asi que ya sabes, si lo modificas tienes que compartir tus conocimientos
+ con nostros! :)  
 """
 
 import cherrypy
@@ -152,6 +153,13 @@ class Server:
     self.video = "none"
     return "data:"+  tmp_order +"\n\n"
  
+
+#codigo recibido de los clientes 
+@cherrypy.expose
+def savePNG(self, **img): 
+    print "hola que tal!!"
+    self.img = img['img'] 
+    return "OK"
 
 
 

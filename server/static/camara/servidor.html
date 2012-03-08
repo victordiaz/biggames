@@ -5,25 +5,33 @@
 </head>
 <body> 
 <h1>Servidor</h1>
-<video autoplay></video>
+<video id="videoq" autoplay></video>
 <canvas id = "localvideo"> </canvas>
 <img src="" id = "remotevideo" style="width:240px;height:400px"/> </img>
 
 <script type="text/javascript">
 
 $(document).ready(function() { 
+    var video = document.getElementById('videoq');1
+	var heading = document.getElementsByTagName('h1')[0];
 
-	var video = document.getElementsByTagName('video')[0], 
-       heading = document.getElementsByTagName('h1')[0];
+	if(navigator.getUserMedia || navigator.webkitGetUserMedia) { 
+		alert("qq");
+  		//navigator.getUserMedia('video', successCallback, errorCallback);
+		navigator.webkitGetUserMedia('video', successCallback, errorCallback);
 
-	if(navigator.getUserMedia) {
-  		navigator.getUserMedia('video', successCallback, errorCallback);
   		function successCallback( stream ) {
-    		video.src = stream;
+			video.src = window.webkitURL.createObjectURL(stream);
+	
+    		//video.src = stream; //opera 
+			
+			
   		}
   		function errorCallback( error ) {
     		heading.textContent = 
         	"An error occurred: [CODE " + error.code + "]";
+			alert("qq5");
+
   		}
 	} else {
   		heading.textContent = 

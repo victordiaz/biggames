@@ -25,14 +25,25 @@
 <div id = "previewcontainter">
 
 <div id = "canvascontainer"> 
-<canvas class = "display" data-processing-sources="fachadaMedialabPradoPequenya.pde" width="192" height="157">
+  <canvas class = "display" data-processing-sources="fachadaMedialabPradoPequenya.pde" width="192" height="157">
+  <p>Your browser does not support the canvas tag.</p>
+  </canvas> 
 
-<p>Your browser does not support the canvas tag.</p>
-</canvas>
+  <div id="codeoncanvas"> 
+	<ul> 
+		<li id = "li0"> 14: fill(255); </li>
+		<li id = "li1"> 15: ellipse(25, 25, 12, 12); </li>
+		<li id = "li3"> 16: for (int i = 0; i < 0; i++) { </li>
+
+	</ul> 
+	
+  </div> 
+
+</div> 
+
 <noscript>
 <p>JavaScript is required to view the contents of this page.</p>
-</noscript>
-</div> 
+</noscript> 
 
 <!-- 
 <div id = "infobox"> 
@@ -70,6 +81,9 @@
 	<br /> 
 	<input type="checkbox" id="fachada" />
 	<label for="fachada">Este ordenador es la fachada</label>
+	<br /> 
+	<input type="checkbox" id="notificaciones" />
+	<label for="notificaciones">Notificaciones</label>
 	
 
 </details>
@@ -79,7 +93,7 @@
 
  
 <footer>
-<a href = "http://www.uncoded.es"> ▒▒▒▒▒▒▒▒▒ realizado por Uncoded.es ▒▒ </a>
+<a href = "http://www.uncoded.es"> ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ realizado por Uncoded.es ▒▒▒ </a>
 </footer>
 
 </div>
@@ -138,7 +152,7 @@ function addHelp() {
 
 window.onload = function() {
 
-	var editor = ace.edit("editor");
+	var editor = ace.edit("editor"); 
 	editor.setTheme("ace/theme/twilight"); 
 	var textarea = $('textarea[name="editor"]').hide();
 	var JavaScriptMode = require("ace/mode/javascript").Mode;
@@ -152,8 +166,43 @@ window.onload = function() {
     session.setWrapLimitRange(40, 40);
     renderer.setPrintMarginColumn(-12);
 	
+	
+	function showNotification() {
+	  var text = 'You got a new email from someone@test.com'; 
+	  if (window.webkitNotifications.checkPermission() == 0) {
+	    // note the show() 
+		//1 (imagen)
+	    window.webkitNotifications.createNotification('', 'Plain Text Notification', text).show(); 
+		//window.webkitNotifications.createHTMLNotification('http://someurl.com');
+
+	  } else {
+	    alert('You have to click on "Set notification permissions for this page" first to be able to receive notifications.');
+	  }  
+	}; 
+
+	/* 
+	//showNotification(); 
+	notification_test = createNotificationInstance({notificationType: 'html'});
+    notification_test.ondisplay = function() {   };
+    notification_test.onclose = function() {   };
+    notification_test.show();
+	*/ 
+	  
 	session.on('change', function () { 
-		if (liveCoding == true) saveAndReload(session); 
+		//var editor = ace.edit("editor"); 
+		var cursorPosition = editor.getCursorPosition(); 
+		
+		numLine = cursorPosition['row']; 
+		currentLine = session.getDocument().$lines[numLine]; 
+		
+		$('#li1').text(currentLine); 
+		
+		console.log(currentLine); 
+		if (liveCoding == true) {
+			 saveAndReload(session); 
+		} 
+		
+		
 	}); 
 	
 	editor.renderer.setShowPrintMargin = null; 
@@ -197,6 +246,16 @@ function setCode(code) {
 	saveAndReload(session);  
 }
 
+function listProperties(obj) {
+   var propList = "";
+   for(var propName in obj) {
+      if(typeof(obj[propName]) != "undefined") {
+         propList += (propName + ", ");
+      }
+   }
+   alert(propList);
+}
+
 	
 
 // refresh canvas
@@ -215,7 +274,7 @@ function reloadCanvas(source) {
 	} catch(e) {
 		//alert("There was a glitch in the matrix...\n\n"+ e.name +"\n\n" + e.message);
 	}
-	//$("#display").fadeIn("normal");
+	$("#display").fadeIn("normal");
 }
 
 
@@ -279,21 +338,9 @@ function reloadCanvas(source) {
 
 	function onDrop(e) {
 	  reader.readAsDataURL(e.dataTransfer.files[0]);
-	};
+	}; 
 	
-	/* 
-	window.webkitNotifications.requestPermission();
-    window.webkitNotifications.createNotification(
-	        'icon.png', 'Notification Title', 'Notification content...');
 
-	window.webkitNotifications.createHTMLNotification('http://someurl.com');
-	
-	notification_test = createNotificationInstance({notificationType: 'html'});
-    notification_test.ondisplay = function() {   };
-    notification_test.onclose = function() {   };
-    notification_test.show();
-	*/ 
-	
 	</script> 
 	
 	
@@ -307,9 +354,19 @@ function reloadCanvas(source) {
 		//console.log(code); 
 		$.post('../../setCode/', {code:escape(code)}, function(data) {
 			console.log(data)
-		}); 
-		
+		}); 		
 	} 
+	
+	function saveImage() { 
+	  q = document.getElementsByTagName("canvas")[0]
+	  image = q.toDataURL(); 
+	  code = "";
+
+	  $.post('../../savePNG/', {image:image, code:escape(code)}, function(data) { 
+		console.log(data)
+	  }); 
+		
+	}
 	
 	
 	function getCodeListener() { 		
@@ -334,6 +391,8 @@ function reloadCanvas(source) {
 		
 		$("#liveCoding").button();    
 		$("#fachada").button();    
+		$("#notificaciones").button();    
+		
 		
 		$('#liveCoding').click (function () { 		
 			$(this).is (':checked') ? liveCoding = true : liveCoding = false; 
@@ -350,11 +409,16 @@ function reloadCanvas(source) {
 			} 
 		}); 
 
+		$('#notificaciones').click (function () { 		
+			$(this).is (':checked') ? window.webkitNotifications.requestPermission() : liveCoding = false; 
 
-
+		});
+	
 		
 		
- 	});
+ 	}); 
+
+
 	
 	</script>
 	
