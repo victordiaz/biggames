@@ -1,0 +1,104 @@
+<html> 
+<head> 
+	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+	<meta name="viewport"    content="user-scalable=no, width=device-width" />
+        <link rel='stylesheet'  href='http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css' /> 
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.5.min.js'></script> 
+    <script type='text/javascript' src='http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js'></script> 
+   
+    <script type="text/javascript">
+	function receiveTeams(mOrder) {
+		$.getJSON('/getTeams', function(data) {
+			list=eval(data)
+			$('#mainlist').empty()
+			$.each(list,function(index,values){
+				group=values.split("/")[4]
+				if (index!=0) 
+					$('#mainlist').append('<li><a href="#" class="groupFolder" name="' +group+ '">' +group +'</li>')
+			
+			});
+			$('#mainlist').listview();
+			$('#mainlist').listview('refresh');
+			
+		})
+	}
+
+function  receiveFolders( group){
+$.getJSON('/getTeams', function(data) {
+			list=eval(data)
+			console.log(list)
+			$('#mainlist').empty()
+			$.each(list,function(index,values){
+			console.log(index)
+			console.log(values)
+					nested="<ul data-role='listview'>"
+					for (var i=0;i<values.length;i++){
+						nested = nested+'<li><a href="#" class="showfolder" name="' +values[i] + '">' + values[i]+ '</a></li>' 
+					}
+					
+					nested+="</ul>"			
+					console.log(nested)
+					$('#mainlist').append('<li><a href=	"#" class="groupFolder" name="' +index+ '">' +index +nested+ '</li>')
+					
+			
+			});
+			$('#mainlist').listview();
+			$('#mainlist').listview('refresh');
+			
+		})
+
+}
+
+function  receiveFolders_old( group){
+$.getJSON('/getFolder?team='+group, function(data) {
+			list=eval(data)
+			$('#mainlist').empty()
+			$.each(list,function(index,values){
+				group=values.split("/")[4]
+				if (index!=0) 
+					$('#mainlist').append('<li><a href="#" class="groupFolder" name="' +group+ '">' +group +'</li>')
+			
+			});
+			$('#mainlist').listview();
+			$('#mainlist').listview('refresh');			
+		})
+}
+
+
+function showProject(){
+    		folder=$(this).attr('name')
+    		group=""
+    		console.log('click')
+    		$.getJSON('/changeSlides?team='+group+'&folder='+folder, function(data) {
+    		
+
+    		
+    	});
+
+}
+	 $(document).ready(function() {
+    	receiveFolders()
+    	
+    	$('.showfolder').live('click',function(){
+
+    		showProject()
+    	
+	});	
+	
+	}); 
+		 
+	</script> 
+</head> 
+     
+<body > 
+     <div data-role='page'>
+     	<div data-role='content'  >
+     
+	     <ul data-role="listview" data-theme="g" id="mainlist">
+		
+		</ul>
+     
+    	 </div> 
+	</div> 
+</body> 
+</html>

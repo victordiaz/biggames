@@ -55,13 +55,13 @@ class Server:
   #la accion que enviamos al ordenador que controla la pantalla 
   @cherrypy.expose
   def getAction(self):
-	cherrypy.response.headers['Content-Type']= 'text/event-stream; charset=utf-8 \n\n'
+	cherrypy.response.headers['Content-Type'] = 'text/event-stream; charset=utf-8 \n\n'
   	tmp_order = self.order;
   	self.order = "none"
   	if (tmp_order=="change"):
   		return self.returnFolder()
   	else:
-	  	return "data:"+  tmp_order +"\n\n"
+	  	return "data:"+  tmp_order + "\n\n"
   
 
   #lo que recibe del control remoto 
@@ -80,9 +80,17 @@ class Server:
   #control: List team foldersgetTeams 
   @cherrypy.expose		
   def getTeams(self):
-  	dirs=[]
+  	dirs={}
   	for dirname, dirnames, filenames in os.walk('./static/presentation/contenidos/'):
-  		dirs.append(dirname)
+  		b=dirname.split("/")
+		if(len(b) >= 6 ):
+  			group=b[4]
+  			folder=b[5]
+  			if(group in dirs):
+  				dirs[group].append(folder)
+  			else:
+  				dirs[group]=[]
+  				dirs[group].append(folder)	
   	return json.dumps(dirs)	  
   	
   #control: list folders for each time		
@@ -95,9 +103,10 @@ class Server:
 
   #control: set current folder on screen
   @cherrypy.expose
-  def setFolder(self,path): 
+  def changeSlides(self,team,folder): 
   	self.current_path=path
   	self.order="change"
+  	
   	
   def returnFolder(self):
   	print "returnFOLDER------------------"  

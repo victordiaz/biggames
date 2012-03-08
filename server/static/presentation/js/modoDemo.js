@@ -55,8 +55,24 @@ function stListener(){
 	};
 	
 	source.addEventListener("change", function( e ) {
-		console.log(e.data);
-		 console.log(JSON.parse(e.data) );
+		//console.log(e.data);
+		console.log(JSON.parse(e.data) );
+		//TODO load images as DIVS
+		numberslides=5;
+		$('.otherSlides').empty();
+		
+		for (var j=0; j<numberslides; j+=1 ){
+			$('.otherSlides').append('<div id="n_" '+ j +'"> <img src="path/"+" '+ j +'"s>  </div>' )
+		}
+		
+		$('.otherSlides').append('<div id="n_1"  class="currentSlide"> <img src="path/"+numberslides>  </div>' )
+		 //PUT IMAGE N1
+
+		$('#n_'+n_slide).switchClass('slide','currentSlide',0); 	
+		$('.currentSlide').hide();
+		$('#contentbar').append($('.currentSlide')); 	
+		$('.currentSlide').show('clip',1000); 		 
+		 //MAKE NEXT AND PREV WORK
 	
 		}, false);
 }
@@ -74,3 +90,5 @@ function prev() {
 	else
 		goTo(current_slide-1)
 }
+
+
