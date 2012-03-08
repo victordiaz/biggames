@@ -1,4 +1,4 @@
 .DS_Store
 biggames.conf
 _site
-server/site.log
+site.log
