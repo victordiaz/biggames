@@ -11,7 +11,7 @@
 	
 
 	<script type="text/javascript"> 
-		MAX_SLIDE=41
+		MAX_SLIDE=46
 jQuery(document).ready(
 	function(){
         $('#screen').mousemove(function(e){
@@ -28,27 +28,33 @@ jQuery(document).ready(
 function init_slides(){
 	current_slide=1;
 	var count=1
-	for (count; count<13; count+=1){
+	for (count; count<5; count+=1){
 		if(count==1)
-			$('#otherSlides').append('<div id="n_'+count+ '"  class="currentSlide"> <img src="slides/t'+count+ '.png"> </div>')
+			$('#otherSlides').append('<div id="n_'+count+ '"  class="currentSlide"> <img src="slides/i'+count+ '.png"> </div>')
 		else	
-			$('#otherSlides').append('<div id="n_'+count+ '"  class="slide"> <img src="slides/t'+count+ '.png"> </div>')
+			$('#otherSlides').append('<div id="n_'+count+ '"  class="slide"> <img src="slides/i'+count+ '.png"> </div>')
 	}
 	console.log(count)
 
-	for (var part_count=1; part_count<14; part_count+=1){
+	for (var part_count=1; part_count<10; part_count+=1){
+		$('#otherSlides').append('<div id="n_'+count+ '"  class="slide"> <img src="slides/t'+part_count+ '.png"> </div>')	
+		count+=1
+	}
+	for (var part_count=1; part_count<12; part_count+=1){
 		$('#otherSlides').append('<div id="n_'+count+ '"  class="slide"> <img src="slides/c'+part_count+ '.png"> </div>')	
 		count+=1
 	}
-	for (var part_count=1; part_count<7; part_count+=1){
+/* 	fotos */
+	for (var part_count=1; part_count<12; part_count+=1){
 		$('#otherSlides').append('<div id="n_'+count+ '"  class="slide"> <img src="slides/f'+part_count+ '.png"> </div>')	
 		count+=1
 	}
-	
 	for (var part_count=1; part_count<8; part_count+=1){
-		$('#otherSlides').append('<div id="n_'+count+ '"  class="slide"> <img src="slides/fo'+part_count+ '.png"> </div>')	
+		$('#otherSlides').append('<div id="n_'+count+ '"  class="slide"> <img src="slides/fin'+part_count+ '.png"> </div>')	
 		count+=1
 	}
+	
+
 	
 }		
 	
@@ -152,10 +158,12 @@ EXAMPLES
 <div id="otherSlides">
 
 
-<div id="n_39" class="slide">  <video id="video" width="192px" height="125px" src="video_lara.webm" controls></video>
+<div id="n_43" class="slide">  <video id="video" width="192px" height="125px" src="cat.mp4" controls></video>
+</div>
+<div id="n_44" class="slide">  <video id="video" width="192px" height="125px" src="video_lara.webm" controls></video>
 </div>
 
-<div id="n_40" class="slide"> <video id="webcam"  width="192px" height="125px" ></video> </div>
+<div id="n_45" class="slide"> <video id="webcam"  width="192px" height="125px" ></video> </div>
 </div>
 
 </html>    
