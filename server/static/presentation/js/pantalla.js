@@ -10,15 +10,17 @@ function arrange_slides() {
 } 
 		
 function goTo(n_slide){
-	if(n_slide>MAX_SLIDE)
-		return;
+	if(n_slide>MAX_SLIDE){
+		console.log("no se cmpl" + n_slide)
+		
+		return}
 	$('#otherSlides').append($('.currentSlide'))	
 	$('.currentSlide').switchClass('currentSlide','slide',0)
 /* 			$('#contentbar').empty() */
 			
 	//slide should be on and curentSlide off now
 	arrange_slides();
-	current_slide = n_slide;
+	current_slide = parseInt(n_slide);
 	$('#n_'+n_slide).switchClass('slide','currentSlide',0); 	
 	$('.currentSlide').hide();
 		
@@ -30,8 +32,8 @@ function goTo(n_slide){
 
 		
 function next() {
-	if(current_slide==MAX_SLIDE)
-		return
+	if(current_slide>=MAX_SLIDE){
+		return}
 	else
 		goTo(current_slide+1)
 } 

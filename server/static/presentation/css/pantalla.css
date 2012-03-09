@@ -53,7 +53,7 @@ body{
 .currentSlide{
 	height: 125px;
 	width:  192px;
-	background-color: red;
+	background-color: black;
 	position:static;
 }
 #content{
