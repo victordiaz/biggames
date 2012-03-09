@@ -30,7 +30,7 @@ function goTo(n_slide){
 /* 			$('#contentbar').empty() */
 			
 	//slide should be on and curentSlide off now
-	arrange_slides();
+	arrange_slides();	
 	$('#n_'+n_slide).switchClass('slide','currentSlide',0); 	
 	$('.currentSlide').hide();
 		
@@ -45,33 +45,28 @@ function stListener(){
 	    //setTimeout(this.send, 825); 
 	    if(event.data=='next'){
 		    next();
-	        console.log(event.data);
  		} else if(event.data=='prev') {
  			prev();
- 			console.log(event.data);
  		} 		
- 		console.log(event); 
 
 	};
 	
 	source.addEventListener("change", function( e ) {
 		//console.log(e.data);
 		console.log(JSON.parse(e.data) );
+		rcvFolder=JSON.parse(e.data)
 		//TODO load images as DIVS
-		numberslides=5;
-		$('.otherSlides').empty();
-		
-		for (var j=0; j<numberslides; j+=1 ){
-			$('.otherSlides').append('<div id="n_" '+ j +'"> <img src="path/"+" '+ j +'"s>  </div>' )
+		path=rcvFolder.path;
+		numberslides=rcvFolder.slides;
+		$('#otherSlides').empty();		
+		for (var j=2; j<=numberslides; j+=1 ){
+			$('#otherSlides').append('<div class ="slide" id="n_'+ j +'"> <img src="'+path+'/s'+ j +'.png">  </div>' )
 		}
 		
-		$('.otherSlides').append('<div id="n_1"  class="currentSlide"> <img src="path/"+numberslides>  </div>' )
+		$('#otherSlides').append('<div id="n_1"  class="currentSlide"> <img src="'+path+'/s1.png>  </div>' )
 		 //PUT IMAGE N1
-
-		$('#n_'+n_slide).switchClass('slide','currentSlide',0); 	
-		$('.currentSlide').hide();
-		$('#contentbar').append($('.currentSlide')); 	
-		$('.currentSlide').show('clip',1000); 		 
+   		 arrange_slides();
+   		 goTo(1);		 
 		 //MAKE NEXT AND PREV WORK
 	
 		}, false);

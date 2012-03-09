@@ -28,6 +28,8 @@ class Server:
     self.video="none"
     self.img = "none"
     self.showlivecode = "none"
+    self.sharedFiles='/static/presentation/contenidos/'
+    self.goto=2;
     
     cherrypy.config["tools.encode.on"] = True
     cherrypy.config["tools.encode.encoding"] = "utf-8"
@@ -62,6 +64,8 @@ class Server:
   	self.order = "none"
   	if (tmp_order=="change"):
   		return self.returnFolder()
+  	if(tmp_order=="goto"):
+  		return self.returnGoto()	
   	else:
 	  	return "data:"+  tmp_order + "\n\n"
   
@@ -95,32 +99,42 @@ class Server:
   				dirs[group].append(folder)	
   	return json.dumps(dirs)	  
   	
-  #control: list folders for each time		
-  @cherrypy.expose
-  def getFolder(self,team):
-	dirs=[]
-  	for dirname, dirnames, filenames in os.walk('./static/presentation/contenidos/'+team):
-  		dirs.append(dirname)
-  	return json.dumps(dirs)
-
-  #control: set current folder on screen
   @cherrypy.expose
   def changeSlides(self,team,folder): 
-  	self.current_path=path
+  	self.current_path= self.sharedFiles+ team+"/"+folder
   	self.order="change"
   	
   	
   def returnFolder(self):
-  	print "returnFOLDER------------------"  
+  	#print "returnFOLDER------------------"  
   	n_slides=0
-  	for dirname, dirnames, filenames in os.walk('./static/presentation/contenidos/'+self.current_path):
-  		n_slides+=1
+  	for dirname, dirnames, filenames in os.walk('.'+self.current_path):
+  		n_slides=len(filenames)
+  		#n_slides+=1
 	cherrypy.response.headers['Content-Type']= 'text/event-stream; charset=utf-8 \n\n'
 	msg="event: change\n"
 	msg+= 'data: {"path": "'+self.current_path+'", "slides":"'+str(n_slides) +'"} \n\n'
-	print msg
-	
+	#print msg	
 	return msg
+  
+  def returnGoto(self):
+	cherrypy.response.headers['Content-Type']= 'text/event-stream; charset=utf-8 \n\n'
+	msg="event: goto\n"
+	msg+= 'data: {"number": "'+self.goto+ '" } \n\n'
+	#print msg	
+	return msg
+
+  @cherrypy.expose
+  def setGoto(self,number):
+  	print "setgoto"
+  	self.goto=number
+  	self.order = "goto";
+  	return "OK"
+  
+
+
+  
+  
   
   #codigo recibido de los clientes 
   @cherrypy.expose

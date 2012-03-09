@@ -11,6 +11,75 @@
 	
 
 	<script type="text/javascript"> 
+		MAX_SLIDE=41
+jQuery(document).ready(
+	function(){
+        $('#screen').mousemove(function(e){
+	    $('#status').html( e.pageX +', '+ e.pageY);
+    })
+	
+	init_slides();	
+    arrange_slides();
+    stListener();
+    goTo(1)
+
+});
+
+function init_slides(){
+	current_slide=1;
+	var count=1
+	for (count; count<13; count+=1){
+		if(count==1)
+			$('#otherSlides').append('<div id="n_'+count+ '"  class="currentSlide"> <img src="slides/t'+count+ '.png"> </div>')
+		else	
+			$('#otherSlides').append('<div id="n_'+count+ '"  class="slide"> <img src="slides/t'+count+ '.png"> </div>')
+	}
+	console.log(count)
+
+	for (var part_count=1; part_count<14; part_count+=1){
+		$('#otherSlides').append('<div id="n_'+count+ '"  class="slide"> <img src="slides/c'+part_count+ '.png"> </div>')	
+		count+=1
+	}
+	for (var part_count=1; part_count<7; part_count+=1){
+		$('#otherSlides').append('<div id="n_'+count+ '"  class="slide"> <img src="slides/f'+part_count+ '.png"> </div>')	
+		count+=1
+	}
+	
+	for (var part_count=1; part_count<8; part_count+=1){
+		$('#otherSlides').append('<div id="n_'+count+ '"  class="slide"> <img src="slides/fo'+part_count+ '.png"> </div>')	
+		count+=1
+	}
+	
+}		
+	
+
+function stListener(){			
+    source = new EventSource('../../getAction')
+    source.onmessage = function (event) {
+	    //setTimeout(this.send, 825); 
+	    if(event.data=='next'){
+		    next();
+	        console.log(event.data);
+ 		} else if(event.data=='prev') {
+ 			prev();
+ 			console.log(event.data);
+ 		} else if(event.data=='play') {
+     			playVideo();
+     			console.log(event.data);
+     	}
+ 		
+ 		console.log(current_slide); 
+
+	};
+	
+	
+	source.addEventListener("goto", function( e ) {
+		rcv=JSON.parse(e.data)
+		goTo(rcv.number)
+		//goto(e.number)
+	});
+}
+	
 
 	$(document).ready(function() { 
 	    var video = document.getElementById('webcam');1
@@ -49,6 +118,8 @@
 		
 	} 
 	
+	
+
 
 	</script>
 

@@ -12,7 +12,21 @@
 			console.log(data)
 		})
 	}
-	 		 
+	
+	function mgo(){
+		console.log("go to")
+		valor=$('#pagenumber').val()
+				$.getJSON('/setGoto?number=' + valor, function(data) {
+		})
+	}
+	
+	$(document).ready(function() { 
+		$('#gobuton').click( function(){
+			mgo()
+		})
+	
+	
+	}); 		 
 		 
 	</script> 
 </head> 
@@ -20,11 +34,22 @@
 <body > 
      <div data-role='page'>
      <div data-role='content'  >
+     		<div data-role="header"> 
+			<h1>Big Games. Slide Control</h1> 
+		</div> 
      <div data-role="controlgroup" data-type="horizontal">
 		<!-- cuando se clica enviamos la orden al servidor --> 
-     	<a href="#" onclick="javascript:order('next')" data-role="button">next </a>
-		<a href="#" onclick="javascript:order('prev')" data-role="button">prev </a>
+
+		<a href="#" onclick="javascript:order('prev')" data-role="button"  data-icon="arrow-l">prev </a>
+     	<a href="#" onclick="javascript:order('next')" data-role="button"  data-icon="arrow-r" data-iconpos="right">next </a>
+     	<a href="#" onclick="javascript:order('play')" data-role="button" >play </a>
 	</div>
+	<div data-role="fieldcontain">
+		<label for="name"> Text Input: </label>
+		<input type="text" id="pagenumber" value="1" />
+		<a href="#" id="gobuton" data-role="button"> GO! </a>
+	</div>
+	
 	</div> 
 	</div> 
 </body> 

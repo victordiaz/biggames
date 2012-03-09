@@ -31,14 +31,14 @@ $.getJSON('/getTeams', function(data) {
 			$.each(list,function(index,values){
 			console.log(index)
 			console.log(values)
-					nested="<ul data-role='listview'>"
+					nested="<ul data-role='listview' data-id='myfooter'>"
 					for (var i=0;i<values.length;i++){
-						nested = nested+'<li><a href="#" class="showfolder" name="' +values[i] + '">' + values[i]+ '</a></li>' 
+						nested = nested+'<li> <a href="control.html" class="showfolder"  name="' + index + '">'+values[i]+'</a></li>' 
 					}
 					
 					nested+="</ul>"			
 					console.log(nested)
-					$('#mainlist').append('<li><a href=	"#" class="groupFolder" name="' +index+ '">' +index +nested+ '</li>')
+					$('#mainlist').append('<li>' +index +nested+ '</li>')
 					
 			
 			});
@@ -49,56 +49,44 @@ $.getJSON('/getTeams', function(data) {
 
 }
 
-function  receiveFolders_old( group){
-$.getJSON('/getFolder?team='+group, function(data) {
-			list=eval(data)
-			$('#mainlist').empty()
-			$.each(list,function(index,values){
-				group=values.split("/")[4]
-				if (index!=0) 
-					$('#mainlist').append('<li><a href="#" class="groupFolder" name="' +group+ '">' +group +'</li>')
-			
-			});
-			$('#mainlist').listview();
-			$('#mainlist').listview('refresh');			
-		})
-}
 
-
-function showProject(){
-    		folder=$(this).attr('name')
-    		group=""
-    		console.log('click')
-    		$.getJSON('/changeSlides?team='+group+'&folder='+folder, function(data) {
-    		
-
-    		
-    	});
-
-}
 	 $(document).ready(function() {
-    	receiveFolders()
-    	
+    	receiveFolders()    	
     	$('.showfolder').live('click',function(){
-
-    		showProject()
-    	
-	});	
+    	console.log("showfolder")
+    		group=$(this).attr('name')
+    		folder=$(this).text()
+    		$.getJSON('/changeSlides?team='+group+'&folder='+folder, function(data) {    		
+    		});
+		});	
 	
 	}); 
+	
+		function order(mOrder){
+		$.getJSON('/setOrder?mAction=' + mOrder , function(data) {
+			console.log(data)
+		})
+	}
 		 
 	</script> 
 </head> 
      
 <body > 
-     <div data-role='page'>
-     	<div data-role='content'  >
+     <div data-role='page' id="one">
+
+
      
-	     <ul data-role="listview" data-theme="g" id="mainlist">
+     	<div data-role='content'  >
+
+     
+	     <ul data-role="listview" data-theme="g" id="mainlist" data-id="myfooter">
 		
 		</ul>
      
     	 </div> 
 	</div> 
+
+	
+	
 </body> 
 </html>
