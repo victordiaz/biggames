@@ -1,0 +1,32 @@
+---
+layout: post 
+root: "./.."
+category:  game 
+img: rainingletters
+title: "Raining letters" 
+grupo_n: 1
+grupo_p: [José Manuel Alcalá, Stella Carrera, Mónica Montoya] 
+technologies: [Processing] 
+---
+
+Equipo 1:
+
+DESCRIPCIÓN:
+1. Objetivo del juego:
+Construir palabras propuestas por el juego en castellano e inglés
+
+2. Descripción:
+Cae una lluvia de letras, Kataplasto esta muy hambriento, su objetivo es comer las letras que caen para componer la palabra propuesta por El Ojo. Tijeritas, al que le gusta fastidiar, intentará coger las letras que necesita Kataplasto para formar su palabra.
+
+3. Personajes:
+El Ojo: No juega. Propone las palabras: ojo, eye, ala, wing, pata, leg, letras, letters, palabras, words, lluvia, rain, tijeras, scissors, juego, game, pulga, flea, ornitorrinco, platypus. 
+
+Kataplasto: Player 1. Come letras y defeca palabras. Se mueve de derecha a izquierda dándose la vuelta. Cuando aparece la letra deseada  levanta la cola convirtiéndose en otro animal con la boca abierta y comiéndose la letra. Cuando ha comido todas las letras defeca la palabra propuesta.
+
+Tijeritas: Player 2. Se mueve de derecha a izquierda y de arriba a bajo dándose la vuelta. Su misión es coger la letra que necesita Kataplasto para que no pueda formar la palabra. Cuando hay una letra delante de ella tiene que esperar a que pase para poder avanzar.
+
+4. Cómo se juega:
+Cada jugador toma un personaje que mueve con su propio cuerpo Player 1, Kataplasto, que se mueve de derecha a izquierda y al pararse levanta la cola para comer una letra y el Player 2, Tijeritas, se mueve de derecha a izquierda y de delante a atrás en la plaza (de arriba a bajo en la pantalla) para robar las letras que necesita Kataplasto. Se tiene que parar cuando tiene una letra delante porque si la toca le hiere y a la tercera herida muere y por lo tanto pierde. Cada herida se representa con una tirita sobre Tijeritas. Si Kataplasto no consigue comer todas las letras de la palabra pierde.
+
+
+

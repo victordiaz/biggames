@@ -1,0 +1,21 @@
+---
+layout: post 
+root: "./.."
+category:  game 
+img: rainingletters
+title: "Paleolitic Games" 
+grupo_n: 5
+grupo_p: [Martina Minnucci, Cesar Garcia, Sara Alvarellos, Beatriz Coto, Santiago Lara, Carlos Badiola, Carina Ruvira] 
+technologies: [Processing] 
+---
+
+Un super mega mamut de nombre Geronimo, te espera en la plaza para jugar con el!
+
+Cuando la plaza se encuentra vacia, Geronimo, animal preistorico de las carnes tierna, mueve su trompa y de forma provocadora te invita a entrar en la plaza para interactuar con la famosa pantalla digital.
+Unas grandes llamas se encienderan en el cuerpo del pobre Geronimo y en las cabezas de los transeuntes ...y solo corriendo locamente agitando los brazo y quitandose todas sus ropas, podran lograr apagar el orrible incendio...y Geronimos y los seres humano se salvaran!
+
+...si no...el super mega Geronimo se convertirá en un super mega chuleton sanguinoliento :-(
+
+Corre, salva Geronimo y el te agradecerá saludandote con su larga trompa y su corta cola! 
+
+:-D ;-)

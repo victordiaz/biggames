@@ -1,0 +1,18 @@
+---
+layout: post 
+root: "./.."
+category:  game 
+img: rainingletters
+title: "No mates a tus ídolos" 
+grupo_n: 3
+grupo_p: [Antonio Carrillo, Antonio Sánchez, Berzotadas, Kiniki, Joaquín Siabra, Eduardo Vélez, Chema Blanco] 
+technologies: [Processing] 
+---
+
+Oh my god!
+Varios personajes ochentosos han resucitado y andan por mitad de la
+carretera.
+Más vale que los esquives en tu camino de regreso a casa.
+Si os lo curráis, vuestro querido primo Slot os regalará unas deliciosas
+chocolatinas.
+
