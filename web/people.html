@@ -12,9 +12,10 @@ title: Main
 	
 <ul class="block-grid five-up mobile project_preview">
 		
-    {% for people in site.pages %} 
-	{% if people.category contains 'participant' %}  
 	
+    {% for people in site.pages %} 
+	{% if people.category contains 'participant' %} 	
+	{% if people.asistencia contains 'si' %}  
 	<li class = "people"> 
 		<a href="notyet.html"> 
 			<!-- not yet 
@@ -26,6 +27,7 @@ title: Main
 	
 	</li> 
 	
+	{% endif %}  	
 	{% endif %}  	
     {% endfor %}  
 

@@ -27,15 +27,10 @@ class Server:
     self.code="none"
     self.video="none"
     self.img = "none"
-<<<<<<< HEAD
     self.showlivecode = "none"
     self.sharedFiles='/static/presentation/contenidos/'
     self.goto=2;
-=======
-    self.showlivecode = "none" 
-    self.play = "none" 
-    
->>>>>>> q
+
     
     cherrypy.config["tools.encode.on"] = True
     cherrypy.config["tools.encode.encoding"] = "utf-8"

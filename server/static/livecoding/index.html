@@ -192,9 +192,8 @@ window.onload = function() {
     notification_test.show();
 	*/ 
 	
-	function updateCodeLive() { 
+	function updateCodeLive(cursorPosition) { 
 		//var editor = ace.edit("editor"); 
-		var cursorPosition = editor.getCursorPosition(); 
 
 		numLine = cursorPosition['row']; 
 		previousLine = session.getDocument().$lines[numLine - 1]; 
@@ -209,11 +208,14 @@ window.onload = function() {
 		$('#li1').text(currentLine);  
 		$('#li2').text(nextLine); 
 
+		sendCodeLine(cursorPosition); 
 		
 	} 
 	  
 	session.on('change', function () { 
-		updateCodeLive(); 
+		var cursorPosition = editor.getCursorPosition(); 
+	
+		updateCodeLive(cursorPosition); 
 		
 		console.log(currentLine); 
 		if (liveCoding == true) {
@@ -223,8 +225,10 @@ window.onload = function() {
 		
 	}); 
 	
+	
 	editor.getSession().selection.on('changeCursor', function () { 
-		updateCodeLive(); 
+		var cursorPosition = editor.getCursorPosition(); 
+		updateCodeLive(cursorPosition); 
 		
 	});
 	
@@ -391,6 +395,13 @@ function reloadCanvas(source) {
 	  }); 
 		
 	}
+	
+	function sendCodeLine(codeLine) { 
+		//console.log(code); 
+		$.post('../../setConfig/', {config:codeLine}, function(data) {
+			console.log(data)
+		}); 		
+	} 
 	
 	
 	function getCodeListener() { 		
