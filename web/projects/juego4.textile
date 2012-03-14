@@ -1,0 +1,10 @@
+---
+layout: post 
+root: "./.."
+category: game 
+img: colorpong
+title: "pong!" 
+grupo_n: 
+grupo_p: [] 
+technologies: [Processing] 
+---

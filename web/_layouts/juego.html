@@ -71,7 +71,7 @@ layout: default
 
 {% endif %} 
 
-<!-- 
+
 {% if page.technologies != null %} 
 <h3> Used Technologies: </h3> 
 
@@ -82,7 +82,6 @@ layout: default
 		{% endif %} 
 	</ul> 
 
---> 
 
 {% if page.task != null %} 
 <h3> My task: </h3> 
@@ -122,6 +121,27 @@ layout: default
 </div> 
 
 
+</div> <!-- row --> 
+
+
+<div class="row">	
+<div class = "eight columns"> 
+	
+	<div class="moreprojects">
+	<h1> More projects </h1>
+	<ul class="qq2"> 
+	{% for project in site.pages %}
+	{% if project.category contains 'project' or project.category contains 'hack' %}  
+		<li> 
+		<a class="has-tip right" id="{{project.img}}" data-width="120px" title="{{project.title}}" href="{{root}}{{ project.url }}"> 
+		<img src="{{root}}/images/{{project.img|downcase}}/preview.jpg" />  
+	
+		</a> 
+		</li> 	
+	{% endif %}  	
+	{% endfor %}  
+	</ul>
+	</div>
 </div> <!-- row --> 
 
 

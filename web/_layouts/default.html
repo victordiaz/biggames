@@ -9,11 +9,13 @@
 	<!-- Set the viewport width to device width for mobile -->
 	<meta name="viewport" content="width=device-width" /> 
 
+
+	{% capture root %}{% if page.root %}{{ page.root }}{% else %}{{ site.root }}{% endif %}{%endcapture%}
 	
 
 	<!-- Included CSS Files -->
-	<link rel="stylesheet" href="./stylesheets/foundation.css">
-	<link rel="stylesheet" href="./stylesheets/app.css">
+	<link rel="stylesheet" href="{{root}}/stylesheets/foundation.css">
+	<link rel="stylesheet" href="{{root}}/stylesheets/app.css">
 
 	<!--[if lt IE 9]>
 		<link rel="stylesheet" href="stylesheets/ie.css">
@@ -25,7 +27,7 @@
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 		
-	<link rel="stylesheet" href="./stylesheets/web.css" type="text/css" media="screen, projection" /> 
+	<link rel="stylesheet" href="{{root}}/stylesheets/web.css" type="text/css" media="screen, projection" /> 
 
 
 </head>
@@ -38,32 +40,32 @@
 	<div class="row header"> 
 		
   		<div class="six columns">
-    		<a href="./index.html" class="hide-on-phones"> <img src="images/menu/logo.png" > </a>
+    		<a href="./index.html" class="hide-on-phones"> <img src="{{root}}/images/menu/logo.png" > </a>
 		</div>
 
   		
   		<div class="six columns right menu">
 			
 			<div class = "menuitem">
-			<a href="./workshop.html" class="myButtonLink" id="wshop">  
+			<a href="{{root}}/workshop.html" class="myButtonLink" id="wshop">  
 			El Taller
 			</a> 
 			</div>
 			
 			<div class = "menuitem">	
-			<a href="./people.html" class="myButtonLink" id="people"> 
+			<a href="{{root}}/people.html" class="myButtonLink" id="people"> 
 			Participantes
 			</a>
   			</div>
 
 			<div class = "menuitem">
-			<a href="./games.html" class="myButtonLink" id="project"> 
+			<a href="{{root}}/games.html" class="myButtonLink" id="project"> 
 			<p>Los Juegos</p>
 			</a>  
 			</div>
 			
 			<div class = "menuitem">
-			<a href="./tech.html"  class="myButtonLink" id="tech">  
+			<a href="{{root}}/tech.html"  class="myButtonLink" id="tech">  
 			<p>La tecnología</p>
  			</a> 
 			</div>

@@ -3,19 +3,36 @@ layout: default
 title: Main  
 ---
 
-  
-<!-------------------- Tech  --------------------> 
+<!-------------------- Games  --------------------> 
+
 
 <!-- no encontrado -->
-<div class="row header notyet"> 
-<div class = "eight columns"> 
-	<img src="images/noencontrado.png" alt="no encontrado">
-</div> 
-<div class = "four columns"> 
-	<h2>Al finalizar el taller colgaremos fotos y vídeos de los trabajos realizados.</h2>
-</div> 
+<div class="row header"> 
+	
+<ul class="block-grid three-up mobile project_preview">
+		
+	
+    {% for game in site.pages %} 
+	{% if game.category contains 'game' %} 	
+	<li class = "game"> 
+		<a href={{game.url}}> 
+			<!-- not yet 
+			<a href="{{root}}{{ people.url }}"> 
+			-->
+		  	<img src="images/juegos/{{game.img|downcase}}.png" alt="{{game.title}}"/>  
+			<p> {{game.title}}  </p> 		
+		</a> 
+	
+	</li> 
+	
+	{% endif %}  	
+    {% endfor %}  
 
+</ul> 
+	
 </div>
+
+
 
 
 
