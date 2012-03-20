@@ -16,12 +16,12 @@ title: Main
     {% for people in site.pages %} 
 	{% if people.category contains 'participant' %} 	
 	{% if people.asistencia contains 'si' %}  
-	<li class = "people"> 
+	<li class = "game itemlist peoplelistitem" style="{height:175px;}"> 
 		<a href="notyet.html"> 
 			<!-- not yet 
 			<a href="{{root}}{{ people.url }}"> 
 			-->
-		  	<img src="images/people/{{people.img|downcase}}" alt="{{people.name}}"/>  
+		  	<img src="images/people/{{people.img}}" alt="{{people.name}}"/>  
 			<p> {{people.name}}  </p> 		
 		</a> 
 	

@@ -137,7 +137,61 @@ body {
 		padding-bottom: 50px;
 		margin-bottom: 30px;
 		margin-top: 30px !important;
+	} 
+
+	.content2 {
+		background-color: rgba(255,255,255,0.9);
+		box-shadow: 10px 0px 10px rgba(0,0,0,0.1) , -10px 0px 10px rgba(0,0,0,0.1);
+		padding: 15px;
+		padding-bottom: 50px;
+		margin-bottom: 30px;
+		margin-top: 30px !important;
+	} 
+
+
+	.gamelistitem {
+		background-color: rgba(255,255,255,0.9);
+		box-shadow: 10px 0px 10px rgba(0,0,0,0.1) , -10px 0px 10px rgba(0,0,0,0.1);
+		margin-bottom: 0px;
+		margin-top: 30px !important;
+	} 
+
+	.peoplelistitem {
+		background-color: rgba(255,255,255,0.9);
+		box-shadow: 10px 0px 10px rgba(0,0,0,0.1) , -10px 0px 10px rgba(0,0,0,0.1);
+		margin-bottom: 0px;
+		margin-top: 30px !important; 
+		height: 175px; 
+	} 
+
+
+	.itemlist p {
+	
+		font-size: 11px;
+		line-height: 1.25;
+		margin: 0 0 18px; 
+		text-transform: capitalize; 
+		text-align: center;
+		margin: 5px;
+		color: #BA2E3A;
+		font-weight: bold;
+	} 
+
+
+
+	.notification { 
+		background-color: rgba(255, 0, 0, 0.7);
+		font-size: 15px;
+		line-height: 1.25;
+		text-transform: capitalize; 
+		color: #fff;
+		font-weight: bold;
 	}
+
+
+
+	
+	
 	.menu { 
 	    text-align: center;
 	    padding-left: 0px; 
