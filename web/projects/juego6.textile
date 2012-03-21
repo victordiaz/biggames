@@ -3,8 +3,12 @@ layout: post
 root: "./.."
 category: game 
 img: pong
-title: "pong pang!" 
+title: "Pong Fight" 
 grupo_n: 
-grupo_p: [] 
+grupo_p: [Nacho Foche Pérez, Elena Pérez, Ferney Beltrán Molina, Jordi Burguet Castell ] 
 technologies: [Processing] 
 ---
+
+El pong fight es una versión multiplayer del antiguo pong en el que los jugadores han de desplazarse rápidamente y utilizar el cuerpo para evitar que la bola entre en su área. Simultáneamente han de intentar colar la bola en el área contraria. Nuestra intención es crear un juego altamente dinámico en el que los jugadores no jueguen sólo contra la máquina, sino entre ellos.   Dentro del campo de juego hay obstáculos que dificultan la estrategia de juego. Los obstáculos aparecen y desaparecen, y cambian de sitio. Los obstáculos que hemos elegido son objetos "problematicos" que suelen habitar la plaza, como por ejemplo restos del botellón del fin de semana, folletos del 15-M y Democracia Ya, y cajas de diferentes tamaños que por las noches alojan a la gente sin casa. Incluyendo estos objetos en el juego, queremos aumentar la conciencia sobre la situación de abandono y desinterés que recae sobre la plaza, y también en cierto modo criticar nuestra apropiación del espacio público para jugar.
+
+OLE…

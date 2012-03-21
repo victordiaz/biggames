@@ -3,7 +3,7 @@ layout: post
 root: "./.."
 category: game 
 img: dragoncito
-title: "Raining letters" 
+title: "Kataplasto y Tijeritas" 
 grupo_n: 1
 grupo_p: [José Manuel Alcalá, Stella Carrera, Mónica Montoya] 
 technologies: [Processing] 

@@ -3,8 +3,12 @@ layout: post
 root: "./.."
 category: game 
 img: dibujar
-title: "dibujar" 
+title: "Móvil Grafiti" 
 grupo_n: 
-grupo_p: [] 
+grupo_p: [Javier Villarroel, Valeria Okonis, Ignacio Cossio,  Fernanda Ramos] 
 technologies: [Processing] 
 ---
+  
+Es una instalación interactiva que permite pintar en la fachada
+
+El usuario puede pintar, expresarse o decorar  la fachada con un teléfono móvil, un objeto luminoso o reflectante.  Con este propósito se dispone de una paleta de 8 colores que se puede usar para elegir el color de la pintura. Se podría permitir a la gente guardar sus dibujos o firmas y (después de una debida inspección por una persona que gestiona la aplicación) poder proyectarlos en los momentos que nadie pinta en ella y solo pasa por la plaza, a la vez dándoles ejemplo e inspiración así como  invitándoles a hacerlo también.

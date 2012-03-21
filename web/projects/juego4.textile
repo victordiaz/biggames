@@ -3,8 +3,12 @@ layout: post
 root: "./.."
 category: game 
 img: colorpong
-title: "pong!" 
+title: "PONG" 
 grupo_n: 
-grupo_p: [] 
+grupo_p: [Javier Villarroel, Valeria Okonis, Ignacio Cossio,  Fernanda Ramos] 
 technologies: [Processing] 
 ---
+
+Juego interactivo y colaborativo multijugador de rebotar pelotas entre jugadores.
+
+Varios jugadores tienen que pasar  múltiples pelotas unos a otros mediante sus avatares en la pantalla, representados como barras, moviéndose por la plaza a la vez que ven sus siluetas en la pantalla y que les ayuda a orientarse en el espacio de la plaza y relacionarlo con el espacio en la pantalla.

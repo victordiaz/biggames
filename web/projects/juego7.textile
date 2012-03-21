@@ -3,8 +3,17 @@ layout: post
 root: "./.."
 category: game 
 img: cogeme
-title: "cogeme" 
+title: "Cogeme" 
 grupo_n: 
-grupo_p: [] 
+grupo_p: [Moisés de Miguel Ortega, José María Díaz Alonso, Pablo Martínez Bernardo] 
 technologies: [Processing] 
 ---
+
+La pantalla muestra, a modo de salvapantallas llamativo, una bolita con alas que se mueve aleatoriamente y muestra el mensaje: "COGEME". 
+
+Cuando una persona se acerca y la toca comienza el juego.
+
+Un círculo aparece en la plaza y todo el mundo tiene que ir hacia él. Aparecerá también una cuenta atrás que durará unos segundos. Transcurridos esos segundos el jugador o los jugadores que estén fuera habrán perdido. La idea del proyecto es ampliarlo en niveles, hacerlo "multiplayer", y que en cada nivel el circulo pueda desplazarse durante la cuenta atrás, o hacerse más pequeño etc. Pero de momento queda hecho lo básico. Su detección de movimiento por ahora se basa en focos de luz (móviles por ejemplo).
+
+
+
