@@ -5,7 +5,7 @@ category: game
 img: casita
 title: "Abrazos" 
 grupo_n: 
-grupo_p: [Javier Villarroel, Valeria Okonis, Ignacio Cossio,  Fernanda Ramos] 
+grupo_p: [] 
 technologies: [Processing] 
 ---
 
