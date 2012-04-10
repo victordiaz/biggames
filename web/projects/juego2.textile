@@ -4,7 +4,7 @@ root: "./.."
 category: game 
 img: casita
 title: "Fantasma" 
-grupo_n: 
+grupo_n: 2
 grupo_p: [Javier Villarroel, Valeria Okonis, Ignacio Cossio,  Fernanda Ramos] 
 technologies: [Processing] 
 ---
@@ -12,3 +12,7 @@ technologies: [Processing]
 Juego interactivo en el que los jugadores deben evitar ser pillados por un fantasma.
 
 El edificio se representa en sección transversal con forjados y escaleras, para lo que cuenta con una divertida estética de videojuegos naif  y  excelente diseño grafico. Dentro del edificio hay un fantasma que persigue a las personas, representados por sus avatares. El jugador tiene que huir relacionando los movimientos espaciales en la plaza (adelante y  atrás) con movimientos de los avatares por la pantalla (arriba y abajo) recorriendo  las plantas del edificio.
+
+
+!../images/juegos/juego2/juego2_a.jpg(Fantasma1)! 
+!../images/juegos/juego2/juego2_b.jpg(Fantasma2)! 
