@@ -4,8 +4,13 @@ root: "./.."
 category: game 
 img: casita
 title: "Abrazos" 
-grupo_n: 
-grupo_p: [] 
+grupo_n: 3
+grupo_p: [Eduardo Vélez Vallejo] 
 technologies: [Processing] 
 ---
 
+
+Búscate en la plaza y date un abrazo frente a la cámara para presenciar una explosión de amor. Repite hasta llegar a 10.
+
+!../images/juegos/juego9/juego9_a.jpg(Baile del Mamut)! 
+!../images/juegos/juego9/juego9_b.jpg(Baile del Mamut)!

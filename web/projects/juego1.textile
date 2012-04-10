@@ -26,4 +26,5 @@ Tijeritas: Player 2. Se mueve de derecha a izquierda y de arriba a bajo dándose
 Cada jugador toma un personaje que mueve con su propio cuerpo Player 1, Kataplasto, que se mueve de derecha a izquierda y al pararse levanta la cola para comer una letra y el Player 2, Tijeritas, se mueve de derecha a izquierda y de delante a atrás en la plaza (de arriba a bajo en la pantalla) para robar las letras que necesita Kataplasto. Se tiene que parar cuando tiene una letra delante porque si la toca le hiere y a la tercera herida muere y por lo tanto pierde. Cada herida se representa con una tirita sobre Tijeritas. Si Kataplasto no consigue comer todas las letras de la palabra pierde.
 
 
-
+!../images/juegos/juego1/juego1_a.jpg(Kataplasto)! 
+!../images/juegos/juego1/juego1_b.png(Kataplasto2)! 
